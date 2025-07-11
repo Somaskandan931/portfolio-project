@@ -10,19 +10,43 @@ const ExperiencePage = () => {
       period: "July 2024 - October 2024",
       achievements: [
         "Developed automation scripts using Java and Selenium",
-        "Performed data analysis on advocacy campaign datasets",
-        "Generated insightful reports for stakeholders"
+        "Performed data cleaning, transformation, and analysis using Excel on advocacy campaign datasets",
+        "Generated insightful reports and visualizations to support data-driven decision making",
+        "Conducted email marketing campaign through data-backed strategy recommendations"
+      ]
+    },
+    {
+      role: "Part-Time Sales Associate",
+      company: "Bata",
+      location: "Singapore",
+      period: "February 2022 - August 2022",
+      achievements: [
+        "Guided customers in product selection, improving sales conversion rate by 15%",
+        "Managed point-of-sale systems with 100% accuracy in transaction processing",
+        "Supported inventory tracking and visual merchandising, reducing stock discrepancies by 20%"
+      ]
+    },
+    {
+      role: "Security Trooper",
+      company: "Singapore Armed Forces",
+      location: "Singapore",
+      period: "January 2020 - January 2022",
+      achievements: [
+        "Managed operations of the Pass Making Office (PMO), ensuring 100% compliance with security protocols",
+        "Collaborated with Ministry of Health COVID-19 Task Force to implement containment strategies",
+        "Maintained detailed security records and generated analytical reports for command leadership"
       ]
     },
     {
       role: "Podcast Head",
-      company: "Philosophy Club, Sathyabama Institute",
+      company: "Philosophy and Open Discussion Club, Sathyabama Institute of Science and Technology",
       location: "Chennai",
-      period: "Jan 2024 - Present",
+      period: "Jan 2024 – Present",
       achievements: [
-        "Spearheaded 'The Socratic Method' Spotify podcast",
-        "Managed entire podcast lifecycle and production",
-        "Produced Women's Day Special and premiere episodes"
+        "Spearheaded creation and growth of 'The Socratic Method' Spotify podcast",
+        "Managed podcast lifecycle: ideation, scripting, speaker outreach, editing, publishing",
+        "Produced Women’s Day Special and premiere 'college life' episodes with positive reception",
+        "Handled post-production using DaVinci, sourced original jingles, and ensured audio quality"
       ]
     }
   ];
@@ -54,7 +78,7 @@ const ExperiencePage = () => {
                   </span>
                 </div>
               </div>
-              
+
               <div className="space-y-2">
                 {exp.achievements.map((achievement, achIdx) => (
                   <div key={achIdx} className="flex items-start gap-2">
