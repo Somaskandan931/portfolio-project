@@ -39,43 +39,6 @@ const ProjectsPage = () => {
       status: "Published in IEEE ICAAIC 2025",
       date: "2025",
       publication: "ISBN: 979-8-3315-6587-9"
-    },
-    {
-      title: "Real-Time Explainable Fake News Detection",
-      description: "Hybrid BERT-LSTM model with SHAP explainability achieving 96.5% accuracy for fake news classification",
-      tech: ["Python", "FastAPI", "BERT", "LSTM", "SHAP", "MongoDB"],
-      metrics: "96.5% accuracy, 500+ requests/hour, SHAP visualizations",
-      link: "https://github.com/Somaskandan931",
-      status: "Published in ICASET 2025",
-      date: "Nov 2024 - Feb 2025",
-      publication: "IFERP20250322_ICASET_CHE_2230"
-    },
-    {
-      title: "Women Safety Analytics",
-      description: "YOLOv5-based computer vision solution for distress gesture detection with real-time alert system",
-      tech: ["Python", "YOLOv5", "OpenCV", "Twilio", "TensorFlow"],
-      metrics: "91% accuracy, 3-second alert system",
-      link: "https://github.com/Somaskandan931",
-      status: "Smart India Hackathon 2024",
-      date: "Sep 2024"
-    },
-    {
-      title: "ADHD Screening Web Application",
-      description: "AI-powered screening tool using computer vision and NLP for remote ADHD assessment",
-      tech: ["Python", "OpenCV", "RandomForest", "Streamlit", "PyAudio"],
-      metrics: "83% accuracy, 82% F1-score",
-      link: "https://github.com/Somaskandan931",
-      status: "Healthcare Innovation",
-      date: "Jul 2024 - Aug 2024"
-    },
-    {
-      title: "CareerGenie: AI Resume Builder",
-      description: "AI-powered resume builder and job recommender with LaTeX generation and fit-score matching",
-      tech: ["Python", "FastAPI", "React", "LaTeX"],
-      metrics: "Resume parsing, job API integration, automated matching",
-      link: "https://github.com/Somaskandan931/CareerGenie",
-      status: "Production Ready",
-      date: "2025"
     }
   ];
 
