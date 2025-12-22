@@ -4,17 +4,55 @@ import { Github, ExternalLink } from 'lucide-react';
 const ProjectsPage = () => {
   const projects = [
     {
+      title: "EXPLAIN: Multilingual Fake News Detection",
+      description: "Real-time explainable fake news detection for Indian content supporting English, Hindi, Hinglish, and Indic languages with XLM-RoBERTa and IndicBERT models",
+      tech: ["PyTorch", "Transformers", "SHAP", "Captum", "FastAPI", "Streamlit"],
+      metrics: "LoRA-based continual learning, Integrated Gradients explainability",
+      link: "https://github.com/Somaskandan931/EXPLAIN",
+      status: "Ongoing Research",
+      date: "2024 - Present"
+    },
+    {
+      title: "PaperMind: AI-Powered Academic Paper Recommender",
+      description: "Full-stack semantic search platform using LLM embeddings and vector similarity for academic paper discovery",
+      tech: ["Python", "FastAPI", "React", "OpenAI API", "FAISS", "Tailwind CSS"],
+      metrics: "Semantic Scholar & arXiv integration, GPT-based explanations",
+      link: "https://github.com/Somaskandan931/PaperMind",
+      status: "Ongoing Development",
+      date: "2024 - Present"
+    },
+    {
+      title: "SourceUp: AI-Powered Supplier Sourcing Platform",
+      description: "B2B intelligent sourcing platform for SMEs with AI recommendations and automated procurement across ASEAN markets",
+      tech: ["Java", "Spring Boot", "Python", "NLP", "Web Scraping"],
+      metrics: "AI chat assistant, automated quotations, delivery ETA prediction",
+      link: "https://github.com/Somaskandan931/SourceUp",
+      status: "Ongoing Development",
+      date: "2024 - Present"
+    },
+    {
+      title: "FinGuard Pro: Real-Time Fraud Detection",
+      description: "End-to-end AI system for UPI fraud detection with XGBoost and SHAP explainability achieving 97% accuracy and 94% recall",
+      tech: ["XGBoost", "SHAP", "Flask", "Streamlit", "PostgreSQL", "RapidFuzz"],
+      metrics: "97% accuracy, 94% recall, AUC 0.9951, sub-3-second latency",
+      link: "https://github.com/Somaskandan931/FinGuardPro",
+      status: "Published in IEEE ICAAIC 2025",
+      date: "2025",
+      publication: "ISBN: 979-8-3315-6587-9"
+    },
+    {
       title: "Real-Time Explainable Fake News Detection",
-      description: "Hybrid BERT-LSTM model with SHAP explainability achieving 96.5% accuracy",
+      description: "Hybrid BERT-LSTM model with SHAP explainability achieving 96.5% accuracy for fake news classification",
       tech: ["Python", "FastAPI", "BERT", "LSTM", "SHAP", "MongoDB"],
-      metrics: "96.5% accuracy, 500+ requests/hour",
+      metrics: "96.5% accuracy, 500+ requests/hour, SHAP visualizations",
       link: "https://github.com/Somaskandan931",
-      status: "Published Research",
-      date: "Nov 2024 - Feb 2025"
+      status: "Published in ICASET 2025",
+      date: "Nov 2024 - Feb 2025",
+      publication: "IFERP20250322_ICASET_CHE_2230"
     },
     {
       title: "Women Safety Analytics",
-      description: "YOLOv5-based computer vision solution for distress gesture detection",
+      description: "YOLOv5-based computer vision solution for distress gesture detection with real-time alert system",
       tech: ["Python", "YOLOv5", "OpenCV", "Twilio", "TensorFlow"],
       metrics: "91% accuracy, 3-second alert system",
       link: "https://github.com/Somaskandan931",
@@ -23,21 +61,21 @@ const ProjectsPage = () => {
     },
     {
       title: "ADHD Screening Web Application",
-      description: "AI-powered screening tool using computer vision and NLP",
-      tech: ["Python", "OpenCV", "RandomForest", "Streamlit"],
+      description: "AI-powered screening tool using computer vision and NLP for remote ADHD assessment",
+      tech: ["Python", "OpenCV", "RandomForest", "Streamlit", "PyAudio"],
       metrics: "83% accuracy, 82% F1-score",
       link: "https://github.com/Somaskandan931",
       status: "Healthcare Innovation",
       date: "Jul 2024 - Aug 2024"
     },
     {
-      title: "FinGuard Pro",
-      description: "Smart fraud detection system with XGBoost and SHAP explainability",
-      tech: ["Python", "XGBoost", "SHAP", "Flask", "Streamlit"],
-      metrics: "Real-time fraud detection",
-      link: "https://github.com/Somaskandan931/fin-guard-pro",
+      title: "CareerGenie: AI Resume Builder",
+      description: "AI-powered resume builder and job recommender with LaTeX generation and fit-score matching",
+      tech: ["Python", "FastAPI", "React", "LaTeX"],
+      metrics: "Resume parsing, job API integration, automated matching",
+      link: "https://github.com/Somaskandan931/CareerGenie",
       status: "Production Ready",
-      date: "2024"
+      date: "2025"
     }
   ];
 
@@ -53,13 +91,13 @@ const ProjectsPage = () => {
           {projects.map((project, idx) => (
             <div key={idx} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
               <div className="flex justify-between items-start mb-4">
-                <div>
+                <div className="flex-1">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">{project.title}</h3>
                   <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
                     {project.status}
                   </span>
                 </div>
-                <span className="text-sm text-gray-500">{project.date}</span>
+                <span className="text-sm text-gray-500 ml-2">{project.date}</span>
               </div>
               
               <p className="text-gray-700 mb-4">{project.description}</p>
@@ -68,6 +106,13 @@ const ProjectsPage = () => {
                 <p className="text-sm font-medium text-gray-900 mb-2">Key Metrics:</p>
                 <p className="text-sm text-green-600 font-medium">{project.metrics}</p>
               </div>
+
+              {project.publication && (
+                <div className="mb-4">
+                  <p className="text-sm font-medium text-gray-900 mb-1">Publication:</p>
+                  <p className="text-xs text-purple-600 font-mono">{project.publication}</p>
+                </div>
+              )}
 
               <div className="mb-4">
                 <p className="text-sm font-medium text-gray-900 mb-2">Technologies:</p>

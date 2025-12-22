@@ -4,9 +4,9 @@ import { Code, Award, BookOpen, Users, Star, Mail } from 'lucide-react';
 const HomePage = ({ setActiveTab }) => {
   const skills = {
     "Programming": ["Python", "Java", "SQL", "JavaScript"],
-    "ML & AI": ["TensorFlow", "PyTorch", "Scikit-learn", "Keras", "BERT", "HuggingFace"],
-    "Data Science": ["Pandas", "NumPy", "Matplotlib", "Seaborn", "OpenCV"],
-    "Tools & Deployment": ["Git", "FastAPI", "Streamlit", "MongoDB", "Docker"]
+    "ML & AI": ["TensorFlow", "PyTorch", "Scikit-learn", "XGBoost", "BERT", "HuggingFace"],
+    "Data Science": ["Pandas", "NumPy", "Matplotlib", "Seaborn", "OpenCV", "SHAP"],
+    "Tools & Deployment": ["Git", "FastAPI", "Flask", "Streamlit", "PostgreSQL", "Docker"]
   };
 
   return (
@@ -28,6 +28,7 @@ const HomePage = ({ setActiveTab }) => {
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
               Results-driven Machine Learning Engineer specializing in Artificial Intelligence and Natural Language Processing. 
               Experienced in developing and deploying ML models with expertise in Python, TensorFlow, PyTorch, and explainable AI solutions.
+              Published researcher in IEEE conference proceedings.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mb-8">
               <button 
@@ -51,26 +52,26 @@ const HomePage = ({ setActiveTab }) => {
             <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
               <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
                 <Star className="text-yellow-500" size={20} />
-                Featured Project
+                Featured Publication
               </h3>
-              <h4 className="text-lg font-medium text-blue-600 mb-2">Real-Time Explainable Fake News Detection</h4>
-              <p className="text-gray-600 mb-3">Hybrid BERT-LSTM model with SHAP explainability achieving 96.5% accuracy</p>
+              <h4 className="text-lg font-medium text-blue-600 mb-2">FinGuard Pro: Explainable AI for Financial Fraud Detection</h4>
+              <p className="text-gray-600 mb-3">XGBoost-based fraud detection achieving 97% accuracy with SHAP explainability</p>
               <div className="flex items-center gap-2 text-sm text-green-600">
                 <Award size={16} />
-                Published Research Paper
+                Published in IEEE ICAAIC 2025
               </div>
             </div>
 
             <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
               <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
                 <BookOpen className="text-blue-500" size={20} />
-                Recent Achievement
+                Recent Research
               </h3>
-              <h4 className="text-lg font-medium text-purple-600 mb-2">Smart India Hackathon 2024</h4>
-              <p className="text-gray-600 mb-3">Women Safety Analytics solution with 91% accuracy in distress detection</p>
+              <h4 className="text-lg font-medium text-purple-600 mb-2">Real-Time Explainable Fake News Detection</h4>
+              <p className="text-gray-600 mb-3">Hybrid BERT-LSTM model with SHAP achieving 96.5% accuracy</p>
               <div className="flex items-center gap-2 text-sm text-purple-600">
                 <Users size={16} />
-                Social Impact Innovation
+                ICASET Conference 2025
               </div>
             </div>
           </div>

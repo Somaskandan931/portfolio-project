@@ -39,11 +39,11 @@ const ExperiencePage = () => {
     },
     {
       role: "Podcast Head",
-      company: "Philosophy and Open Discussion Club, Sathyabama Institute of Science and Technology",
+      company: "Sathyabama Institute of Science and Technology",
       location: "Chennai",
-      period: "Jan 2023 – Jan 2024",
+      period: "January 2023 – January 2024",
       achievements: [
-        "Spearheaded creation and growth of 'The Socratic Method' Spotify podcast",
+        "Spearheaded creation and growth of 'The Socratic Method' Spotify podcast of Philosophy and Open Discussion Club ",
         "Managed podcast lifecycle: ideation, scripting, speaker outreach, editing, publishing",
         "Produced Women’s Day Special and premiere 'college life' episodes with positive reception",
         "Handled post-production using DaVinci, sourced original jingles, and ensured audio quality"
