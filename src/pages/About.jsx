@@ -18,7 +18,14 @@ const AboutPage = () => {
       grade: "A+"
     },
     {
-      title: "Research Publication",
+      title: "FinGuard Pro: Explainable AI for Financial Fraud Detection",
+      issuer: "IEEE ICAAIC 2025",
+      date: "December 2025",
+      id: "ISBN: 979-8-3315-6587-9",
+      grade: "Published"
+    },
+    {
+      title: "Real-Time Explainable Fake News Detection with BERT-LSTM",
       issuer: "IFERP - ICASET Conference",
       date: "March 2025",
       id: "IFERP20250322_ICASET_CHE_2230",
@@ -41,7 +48,7 @@ const AboutPage = () => {
               Results-driven Machine Learning Engineer specializing in Artificial Intelligence and Natural Language Processing. 
               Experienced in developing and deploying machine learning models with demonstrated expertise in Python, TensorFlow, 
               PyTorch, FastAPI, and data analysis. Proven ability to build end-to-end data pipelines, implement explainable AI solutions, 
-              and deliver user-friendly applications.
+              and deliver user-friendly applications. Published researcher with IEEE conference proceedings.
             </p>
           </div>
 
@@ -63,8 +70,8 @@ const AboutPage = () => {
         </div>
 
         <div className="bg-white rounded-xl p-6 shadow-sm mb-8">
-          <h3 className="text-xl font-semibold mb-6">Certifications</h3>
-          <div className="grid md:grid-cols-3 gap-4">
+          <h3 className="text-xl font-semibold mb-6">Certifications & Publications</h3>
+          <div className="grid md:grid-cols-2 gap-4">
             {certifications.map((cert, idx) => (
               <div key={idx} className="border border-gray-200 rounded-lg p-4">
                 <div className="flex justify-between items-start mb-2">
@@ -73,9 +80,9 @@ const AboutPage = () => {
                 </div>
                 <h4 className="font-medium text-gray-900 mb-1">{cert.title}</h4>
                 <p className="text-sm text-gray-600 mb-2">{cert.issuer}</p>
-                <div className="flex justify-between items-center">
+                <div className="flex flex-col gap-1">
                   <span className="text-xs text-gray-500">{cert.date}</span>
-                  <span className="text-xs text-gray-400">ID: {cert.id}</span>
+                  <span className="text-xs text-gray-400">{cert.id}</span>
                 </div>
               </div>
             ))}
