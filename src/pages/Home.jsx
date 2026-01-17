@@ -93,7 +93,7 @@ const HomePage = ({ setActiveTab }) => {
                 {typedText}<span className="animate-pulse">|</span>
               </p>
             </div>
-            <p className="text-lg text-gray-600 mb-6">M.Sc. Computer Science (AI) @ Sathyabama Institute of Science and Technology</p>
+            <p className="text-lg text-gray-600 mb-6">M.Sc. Computer Science Student @ Sathyabama Institute of Science and Technology</p>
           </div>
 
           <div className="flex flex-wrap justify-center gap-4 mb-12">
