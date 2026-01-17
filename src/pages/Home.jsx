@@ -53,6 +53,28 @@ const HomePage = ({ setActiveTab }) => {
     ]
   };
 
+  const highlights = [
+  {
+    icon: Award,
+    value: "IEEE",
+    label: "Research Paper",
+    color: "text-blue-600",
+  },
+  {
+    icon: BookOpen,
+    value: "5+",
+    label: "ML Projects",
+    color: "text-purple-600",
+  },
+  {
+    icon: Users,
+    value: "3",
+    label: "Dashboards Built",
+    color: "text-green-600",
+  },
+];
+
+
 
 
   return (
@@ -71,7 +93,7 @@ const HomePage = ({ setActiveTab }) => {
                 {typedText}<span className="animate-pulse">|</span>
               </p>
             </div>
-            <p className="text-lg text-gray-600 mb-6">M.Sc. Computer Science (AI) @ Sathyabama Institute</p>
+            <p className="text-lg text-gray-600 mb-6">M.Sc. Computer Science (AI) @ Sathyabama Institute of Science and Technology</p>
           </div>
 
           <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -153,15 +175,6 @@ const HomePage = ({ setActiveTab }) => {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-8 shadow-2xl text-white transform hover:-translate-y-2 transition-all">
-              <Award className="mb-4" size={40} />
-              <h3 className="text-2xl font-bold mb-3">FinGuard Pro</h3>
-              <p className="text-blue-50 mb-4 leading-relaxed">XGBoost-based fraud detection achieving 97% accuracy with SHAP explainability. Published in IEEE ICAAIC 2025.</p>
-              <div className="text-sm text-blue-100 font-semibold">ISBN: 979-8-3315-6587-9</div>
             </div>
           </div>
         </div>
