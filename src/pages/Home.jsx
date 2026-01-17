@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Code, Award, BookOpen, Users, Star, Mail, TrendingUp, Zap, Target, ArrowRight, Download } from 'lucide-react';
 
 const HomePage = ({ setActiveTab }) => {
   const [typedText, setTypedText] = useState('');
-  const roles = ['Machine Learning Engineer', 'AI Researcher', 'Data Scientist', 'NLP Specialist'];
+  const roles = useMemo(
+  () => ['Machine Learning Engineer'],
+  []
+);
   const [roleIndex, setRoleIndex] = useState(0);
 
   useEffect(() => {
@@ -21,7 +24,7 @@ const HomePage = ({ setActiveTab }) => {
       }
     }, 100);
     return () => clearInterval(typeInterval);
-  }, [roleIndex]);
+  }, [roleIndex, roles]);
 
   const skills = {
     "Core ML/AI": [
@@ -86,7 +89,8 @@ const HomePage = ({ setActiveTab }) => {
               <ArrowRight size={18} />
             </button>
             <a
-              href="#"
+              href="/resume.pdf"
+              download
               className="px-8 py-4 bg-white border-2 border-blue-600 text-blue-600 rounded-xl hover:bg-blue-50 transition-all transform hover:-translate-y-1 flex items-center gap-2 font-semibold shadow-md"
             >
               <Download size={20} />
