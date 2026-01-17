@@ -122,15 +122,19 @@ const HomePage = ({ setActiveTab }) => {
             </button>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-            {highlights.map((item, idx) => (
-              <div key={idx} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 border border-gray-100">
-                <item.icon className={`${item.color} mb-3`} size={32} />
-                <div className={`text-3xl font-bold ${item.color} mb-1`}>{item.value}</div>
-                <div className="text-sm text-gray-600 font-medium">{item.label}</div>
-              </div>
-            ))}
-          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12 justify-items-center">
+  {highlights.map((item, idx) => (
+    <div
+      key={idx}
+      className="w-full max-w-xs bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 border border-gray-100"
+    >
+      <item.icon className={`${item.color} mb-3`} size={32} />
+      <div className={`text-3xl font-bold ${item.color} mb-1`}>{item.value}</div>
+      <div className="text-sm text-gray-600 font-medium">{item.label}</div>
+    </div>
+  ))}
+</div>
+
 
           <div className="max-w-4xl mx-auto mb-12">
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
