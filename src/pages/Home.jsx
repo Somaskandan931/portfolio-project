@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Code, Award, BookOpen, Users, Star, Mail, TrendingUp, Zap, Target, ArrowRight, Download } from 'lucide-react';
+import { Code, Award, BookOpen, Users, Mail, TrendingUp, ArrowRight, Download } from 'lucide-react';
 
 const HomePage = ({ setActiveTab }) => {
   const [typedText, setTypedText] = useState('');
