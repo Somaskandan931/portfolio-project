@@ -137,23 +137,29 @@ const HomePage = ({ setActiveTab }) => {
 
 
           <div className="max-w-4xl mx-auto mb-12">
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">Professional Summary</h3>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Applied Machine Learning Engineer with hands-on experience building <span className="font-semibold text-blue-600">end-to-end, production-style ML systems</span> for fraud detection, semantic search, and ranking problems. Strong focus on <span className="font-semibold text-purple-600">model performance, explainability using SHAP</span>, and business-aligned evaluation with XGBoost, LightGBM, and modern NLP pipelines deployed via FastAPI.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg font-medium flex items-center gap-2">
-                  <Award size={16} />
-                  IEEE Published Researcher
-                </span>
-                <span className="px-4 py-2 bg-purple-50 text-purple-700 rounded-lg font-medium flex items-center gap-2">
-                  <TrendingUp size={16} />
-                  Production ML Systems
-                </span>
-              </div>
-            </div>
-          </div>
+  <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+    <h3 className="text-2xl font-bold mb-4 text-gray-900 text-center">Professional Summary</h3>
+    <p className="text-lg text-gray-700 leading-relaxed mb-6 text-center">
+      Applied Machine Learning Engineer with hands-on experience building <span className="font-semibold text-blue-600">end-to-end, production-style ML systems</span> for fraud detection, semantic search, and ranking problems. Strong focus on <span className="font-semibold text-purple-600">model performance, explainability using SHAP</span>, and business-aligned evaluation with XGBoost, LightGBM, and modern NLP pipelines deployed via FastAPI.
+    </p>
+    <div className="flex flex-wrap justify-center gap-3 mt-4">
+  <span className="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg font-medium flex items-center gap-2">
+    <Award size={16} />
+    IEEE Published Researcher
+  </span>
+  <span className="px-4 py-2 bg-purple-50 text-purple-700 rounded-lg font-medium flex items-center gap-2">
+    <TrendingUp size={16} />
+    Production-Ready ML Systems
+  </span>
+  <span className="px-4 py-2 bg-green-50 text-green-700 rounded-lg font-medium flex items-center gap-2">
+    <Zap size={16} />
+    AI/ML Solving Real-World Problems
+  </span>
+</div>
+
+  </div>
+</div>
+
 
           <div className="mb-12">
             <h3 className="text-3xl font-bold text-center mb-8 text-gray-900">Technical Expertise</h3>
