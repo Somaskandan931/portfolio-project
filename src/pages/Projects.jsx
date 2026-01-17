@@ -3,50 +3,56 @@ import { Github, ExternalLink, Award, TrendingUp } from 'lucide-react';
 
 const ProjectsPage = () => {
   const projects = [
-    {
-      title: "FinGuard Pro: Real-Time Fraud Detection",
-      description: "End-to-end fraud detection and risk scoring pipeline using XGBoost on highly imbalanced UPI transaction dataset with SHAP-based explainability for audit workflows",
-      tech: ["XGBoost", "SHAP", "Python", "SQL", "FastAPI", "Streamlit"],
-      metrics: ["97% Accuracy", "94% Recall", "ROC-AUC 0.995", "<3s Latency"],
-      impact: "Architected production-ready fraud detection pipeline with transaction-level root-cause analysis",
-      link: "https://github.com/Somaskandan931/FinGuardPro",
-      status: "IEEE Published",
-      publication: "ICAAIC 2025 (ISBN: 979-8-3315-6587-9)",
-      featured: true,
-      date: "2025"
-    },
-    {
-      title: "SourceUp: Procurement Intelligence Platform",
-      description: "Semantic supplier search engine using Sentence-BERT embeddings and FAISS with LightGBM learning-to-rank model for optimized result relevance",
-      tech: ["Sentence-BERT", "FAISS", "LightGBM", "FastAPI", "Redis"],
-      metrics: ["NDCG@10: 0.744", "+9.2% Improvement", "10k+ Suppliers"],
-      impact: "Eliminated infeasible matches and improved sourcing efficiency with low-latency semantic retrieval",
-      link: "https://github.com/Somaskandan931/SourceUp",
-      status: "Production Ready",
-      featured: true,
-      date: "2025"
-    },
-    {
-      title: "CareerGenie: Resume-Job Matching (RAG)",
-      description: "Retrieval-Augmented Generation pipeline combining semantic retrieval with LLM reasoning for intelligent resume-to-job matching with ATS optimization",
-      tech: ["Sentence-Transformers", "ChromaDB", "RAG", "LaTeX", "Python"],
-      metrics: ["Semantic Search", "Location-Aware", "ATS Optimized"],
-      impact: "Implemented embedding-based indexing for query-aware retrieval and automated resume generation",
-      link: "https://github.com/Somaskandan931/CareerGenie",
-      status: "Active Development",
-      date: "2025"
-    },
-    {
-      title: "PaperMind: Academic Paper Recommender",
-      description: "Full-stack semantic search platform using LLM embeddings and vector similarity for academic paper discovery with GPT-based explanations",
-      tech: ["FastAPI", "React", "OpenAI API", "FAISS", "Tailwind"],
-      metrics: ["Semantic Scholar API", "arXiv Integration", "Vector Search"],
-      impact: "Built intelligent paper discovery system with semantic understanding and AI-powered insights",
-      link: "https://github.com/Somaskandan931/PaperMind",
-      status: "Active Development",
-      date: "2024"
-    }
-  ];
+  {
+    title: "FinGuard Pro: Real-Time Fraud Detection",
+    description:
+      "End-to-end fraud detection and risk scoring pipeline using XGBoost on highly imbalanced UPI transaction dataset with SHAP-based explainability for audit workflows",
+    tech: ["XGBoost", "SHAP", "Python", "SQL", "FastAPI", "Streamlit"],
+    metrics: ["97% Accuracy", "94% Recall", "ROC-AUC 0.995", "<3s Latency"],
+    impact:
+      "Architected production-ready fraud detection pipeline with transaction-level root-cause analysis",
+    link: "https://github.com/Somaskandan931/FinGuardPro",
+    status: "IEEE Published",
+    publication: "ICAAIC 2025 (ISBN: 979-8-3315-6587-9)",
+    date: "2025"
+  },
+  {
+    title: "SourceUp: Procurement Intelligence Platform",
+    description:
+      "Semantic supplier search engine using Sentence-BERT embeddings and FAISS with LightGBM learning-to-rank model for optimized result relevance",
+    tech: ["Sentence-BERT", "FAISS", "LightGBM", "FastAPI", "Redis"],
+    metrics: ["NDCG@10: 0.744", "+9.2% Improvement", "10k+ Suppliers"],
+    impact:
+      "Eliminated infeasible matches and improved sourcing efficiency with low-latency semantic retrieval",
+    link: "https://github.com/Somaskandan931/SourceUp",
+    status: "Production Ready",
+    date: "2025"
+  },
+  {
+    title: "CareerGenie: Resume-Job Matching (RAG)",
+    description:
+      "Retrieval-Augmented Generation pipeline combining semantic retrieval with LLM reasoning for intelligent resume-to-job matching with ATS optimization",
+    tech: ["Sentence-Transformers", "ChromaDB", "RAG", "LaTeX", "Python"],
+    metrics: ["Semantic Search", "Location-Aware", "ATS Optimized"],
+    impact:
+      "Implemented embedding-based indexing for query-aware retrieval and automated resume generation",
+    link: "https://github.com/Somaskandan931/CareerGenie",
+    status: "Active Development",
+    date: "2025"
+  },
+  {
+    title: "PaperMind: Academic Paper Recommender",
+    description:
+      "Full-stack semantic search platform using LLM embeddings and vector similarity for academic paper discovery with GPT-based explanations",
+    tech: ["FastAPI", "React", "OpenAI API", "FAISS", "Tailwind"],
+    metrics: ["Semantic Scholar API", "arXiv Integration", "Vector Search"],
+    impact:
+      "Built intelligent paper discovery system with semantic understanding and AI-powered insights",
+    link: "https://github.com/Somaskandan931/PaperMind",
+    status: "Active Development",
+    date: "2024"
+  }
+];
 
   return (
     <div className="min-h-screen bg-gray-50 pt-24 pb-16">
