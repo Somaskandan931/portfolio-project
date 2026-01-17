@@ -53,12 +53,7 @@ const HomePage = ({ setActiveTab }) => {
     ]
   };
 
-  const highlights = [
-    { icon: TrendingUp, value: "97%", label: "Fraud Detection Accuracy", color: "text-green-600" },
-    { icon: Zap, value: "<3s", label: "Model Latency", color: "text-blue-600" },
-    { icon: Award, value: "2", label: "IEEE Publications", color: "text-purple-600" },
-    { icon: Target, value: "0.995", label: "ROC-AUC Score", color: "text-orange-600" }
-  ];
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
@@ -126,10 +121,6 @@ const HomePage = ({ setActiveTab }) => {
                   <Award size={16} />
                   IEEE Published Researcher
                 </span>
-                <span className="px-4 py-2 bg-green-50 text-green-700 rounded-lg font-medium flex items-center gap-2">
-                  <Star size={16} />
-                  97% Fraud Detection Accuracy
-                </span>
                 <span className="px-4 py-2 bg-purple-50 text-purple-700 rounded-lg font-medium flex items-center gap-2">
                   <TrendingUp size={16} />
                   Production ML Systems
@@ -171,16 +162,6 @@ const HomePage = ({ setActiveTab }) => {
               <h3 className="text-2xl font-bold mb-3">FinGuard Pro</h3>
               <p className="text-blue-50 mb-4 leading-relaxed">XGBoost-based fraud detection achieving 97% accuracy with SHAP explainability. Published in IEEE ICAAIC 2025.</p>
               <div className="text-sm text-blue-100 font-semibold">ISBN: 979-8-3315-6587-9</div>
-            </div>
-
-            <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl p-8 shadow-2xl text-white transform hover:-translate-y-2 transition-all">
-              <BookOpen className="mb-4" size={40} />
-              <h3 className="text-2xl font-bold mb-3">Fake News Detection</h3>
-              <p className="text-purple-50 mb-4 leading-relaxed">Hybrid BERT-LSTM model with SHAP achieving 96.5% accuracy. Published in ICASET Conference 2025.</p>
-              <div className="flex items-center gap-2 text-purple-100 font-semibold">
-                <Users size={18} />
-                Real-Time Explainable AI
-              </div>
             </div>
           </div>
         </div>

@@ -103,7 +103,7 @@ const AboutPage = () => {
                 <Users className="text-green-500 mt-1 flex-shrink-0" size={20} />
                 <div>
                   <h4 className="font-bold text-gray-900">Community Service Volunteer</h4>
-                  <p className="text-sm text-gray-600">Pioneer Fiesta and Woodlands Employment Development Centre</p>
+                  <p className="text-sm text-gray-600">Asian Women's Welfare Association(AWWA) and Woodlands Employment Development Centre</p>
                 </div>
               </div>
             </div>
