@@ -142,7 +142,7 @@ const HomePage = ({ setActiveTab }) => {
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 Applied Machine Learning Engineer with hands-on experience building <span className="font-semibold text-blue-600">end-to-end, production-style ML systems</span> for fraud detection, semantic search, and ranking problems. Strong focus on <span className="font-semibold text-purple-600">model performance, explainability using SHAP</span>, and business-aligned evaluation with XGBoost, LightGBM, and modern NLP pipelines deployed via FastAPI.
               </p>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2">
                 <span className="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg font-medium flex items-center gap-2">
                   <Award size={16} />
                   IEEE Published Researcher
