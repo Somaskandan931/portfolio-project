@@ -1,96 +1,182 @@
-import React from 'react';
-import { Code, Award, BookOpen, Users, Star, Mail } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Code, Award, BookOpen, Users, Star, Mail, TrendingUp, Zap, Target, ArrowRight, Download } from 'lucide-react';
 
 const HomePage = ({ setActiveTab }) => {
+  const [typedText, setTypedText] = useState('');
+  const roles = ['Machine Learning Engineer', 'AI Researcher', 'Data Scientist', 'NLP Specialist'];
+  const [roleIndex, setRoleIndex] = useState(0);
+
+  useEffect(() => {
+    const currentRole = roles[roleIndex];
+    let charIndex = 0;
+    const typeInterval = setInterval(() => {
+      if (charIndex <= currentRole.length) {
+        setTypedText(currentRole.slice(0, charIndex));
+        charIndex++;
+      } else {
+        clearInterval(typeInterval);
+        setTimeout(() => {
+          setRoleIndex((prev) => (prev + 1) % roles.length);
+        }, 2000);
+      }
+    }, 100);
+    return () => clearInterval(typeInterval);
+  }, [roleIndex]);
+
   const skills = {
-    "Programming": ["Python", "Java", "SQL", "JavaScript"],
-    "ML & AI": ["TensorFlow", "PyTorch", "Scikit-learn", "XGBoost", "BERT", "HuggingFace"],
-    "Data Science": ["Pandas", "NumPy", "Matplotlib", "Seaborn", "OpenCV", "SHAP"],
-    "Tools & Deployment": ["Git", "FastAPI", "Flask", "Streamlit", "PostgreSQL", "Docker"]
+    "Core ML/AI": [
+      { name: "Python", level: 95 },
+      { name: "XGBoost", level: 90 },
+      { name: "LightGBM", level: 85 },
+      { name: "SHAP", level: 90 }
+    ],
+    "NLP & LLMs": [
+      { name: "Transformers", level: 85 },
+      { name: "RAG Systems", level: 80 },
+      { name: "Sentence-BERT", level: 85 },
+      { name: "LangChain", level: 75 }
+    ],
+    "Data & APIs": [
+      { name: "FastAPI", level: 90 },
+      { name: "PostgreSQL", level: 85 },
+      { name: "Pandas", level: 95 },
+      { name: "Docker", level: 70 }
+    ],
+    "Tools": [
+      { name: "Git/GitHub", level: 90 },
+      { name: "Streamlit", level: 85 },
+      { name: "FAISS", level: 80 },
+      { name: "MLflow", level: 70 }
+    ]
   };
+
+  const highlights = [
+    { icon: TrendingUp, value: "97%", label: "Fraud Detection Accuracy", color: "text-green-600" },
+    { icon: Zap, value: "<3s", label: "Model Latency", color: "text-blue-600" },
+    { icon: Award, value: "2", label: "IEEE Publications", color: "text-purple-600" },
+    { icon: Target, value: "0.995", label: "ROC-AUC Score", color: "text-orange-600" }
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       <div className="max-w-6xl mx-auto px-4 pt-24 pb-16">
         <div className="text-center">
           <div className="mb-8">
-            <div className="w-32 h-32 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center text-white text-4xl font-bold">
+            <div className="w-40 h-40 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-500 rounded-full mx-auto mb-6 flex items-center justify-center text-white text-5xl font-bold shadow-2xl ring-4 ring-white">
               SR
             </div>
-            <h1 className="text-5xl font-bold text-gray-900 mb-4">
-              Hi, I'm <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Somaskandan</span> 👋
+            <h1 className="text-6xl font-bold text-gray-900 mb-4">
+              Somaskandan Rajagopal
             </h1>
-            <p className="text-xl text-gray-600 mb-2">Machine Learning Engineer & AI Researcher</p>
-            <p className="text-lg text-gray-500">M.Sc. Computer Science @ Sathyabama University</p>
-          </div>
-
-          <div className="max-w-3xl mx-auto mb-12">
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Results-driven Machine Learning Engineer specializing in Artificial Intelligence and Natural Language Processing. 
-              Experienced in developing and deploying ML models with expertise in Python, TensorFlow, PyTorch, and explainable AI solutions.
-              Published researcher in IEEE conference proceedings.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              <button 
-                onClick={() => setActiveTab('projects')}
-                className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition-all flex items-center gap-2"
-              >
-                <Code size={20} />
-                View Projects
-              </button>
-              <button 
-                onClick={() => setActiveTab('contact')}
-                className="px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-all flex items-center gap-2"
-              >
-                <Mail size={20} />
-                Contact Me
-              </button>
+            <div className="h-8 mb-4">
+              <p className="text-2xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                {typedText}<span className="animate-pulse">|</span>
+              </p>
             </div>
+            <p className="text-lg text-gray-600 mb-6">M.Sc. Computer Science (AI) @ Sathyabama Institute</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-              <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                <Star className="text-yellow-500" size={20} />
-                Featured Publication
-              </h3>
-              <h4 className="text-lg font-medium text-blue-600 mb-2">FinGuard Pro: Explainable AI for Financial Fraud Detection</h4>
-              <p className="text-gray-600 mb-3">XGBoost-based fraud detection achieving 97% accuracy with SHAP explainability</p>
-              <div className="flex items-center gap-2 text-sm text-green-600">
-                <Award size={16} />
-                Published in IEEE ICAAIC 2025
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <button
+              onClick={() => setActiveTab('projects')}
+              className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:shadow-2xl transition-all transform hover:-translate-y-1 flex items-center gap-2 font-semibold"
+            >
+              <Code size={20} />
+              View Projects
+              <ArrowRight size={18} />
+            </button>
+            <a
+              href="#"
+              className="px-8 py-4 bg-white border-2 border-blue-600 text-blue-600 rounded-xl hover:bg-blue-50 transition-all transform hover:-translate-y-1 flex items-center gap-2 font-semibold shadow-md"
+            >
+              <Download size={20} />
+              Download Resume
+            </a>
+            <button
+              onClick={() => setActiveTab('contact')}
+              className="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl hover:shadow-2xl transition-all transform hover:-translate-y-1 flex items-center gap-2 font-semibold"
+            >
+              <Mail size={20} />
+              Let's Connect
+            </button>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+            {highlights.map((item, idx) => (
+              <div key={idx} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 border border-gray-100">
+                <item.icon className={`${item.color} mb-3`} size={32} />
+                <div className={`text-3xl font-bold ${item.color} mb-1`}>{item.value}</div>
+                <div className="text-sm text-gray-600 font-medium">{item.label}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="max-w-4xl mx-auto mb-12">
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">Professional Summary</h3>
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                Applied Machine Learning Engineer with hands-on experience building <span className="font-semibold text-blue-600">end-to-end, production-style ML systems</span> for fraud detection, semantic search, and ranking problems. Strong focus on <span className="font-semibold text-purple-600">model performance, explainability using SHAP</span>, and business-aligned evaluation with XGBoost, LightGBM, and modern NLP pipelines deployed via FastAPI.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <span className="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg font-medium flex items-center gap-2">
+                  <Award size={16} />
+                  IEEE Published Researcher
+                </span>
+                <span className="px-4 py-2 bg-green-50 text-green-700 rounded-lg font-medium flex items-center gap-2">
+                  <Star size={16} />
+                  97% Fraud Detection Accuracy
+                </span>
+                <span className="px-4 py-2 bg-purple-50 text-purple-700 rounded-lg font-medium flex items-center gap-2">
+                  <TrendingUp size={16} />
+                  Production ML Systems
+                </span>
               </div>
             </div>
-
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-              <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                <BookOpen className="text-blue-500" size={20} />
-                Recent Research
-              </h3>
-              <h4 className="text-lg font-medium text-purple-600 mb-2">Real-Time Explainable Fake News Detection</h4>
-              <p className="text-gray-600 mb-3">Hybrid BERT-LSTM model with SHAP achieving 96.5% accuracy</p>
-              <div className="flex items-center gap-2 text-sm text-purple-600">
-                <Users size={16} />
-                ICASET Conference 2025
-              </div>
-            </div>
           </div>
 
-          <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-            <h3 className="text-xl font-semibold mb-4">Technical Skills</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="mb-12">
+            <h3 className="text-3xl font-bold text-center mb-8 text-gray-900">Technical Expertise</h3>
+            <div className="grid md:grid-cols-2 gap-6">
               {Object.entries(skills).map(([category, skillList]) => (
-                <div key={category} className="text-center">
-                  <h4 className="font-medium text-gray-800 mb-2">{category}</h4>
-                  <div className="flex flex-wrap justify-center gap-1">
+                <div key={category} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+                  <h4 className="font-bold text-xl text-gray-900 mb-4 pb-2 border-b-2 border-blue-200">{category}</h4>
+                  <div className="space-y-3">
                     {skillList.map((skill, idx) => (
-                      <span key={idx} className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-sm">
-                        {skill}
-                      </span>
+                      <div key={idx}>
+                        <div className="flex justify-between mb-1">
+                          <span className="text-sm font-medium text-gray-700">{skill.name}</span>
+                          <span className="text-sm font-semibold text-blue-600">{skill.level}%</span>
+                        </div>
+                        <div className="w-full bg-gray-200 rounded-full h-2">
+                          <div
+                            className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full transition-all duration-1000"
+                            style={{ width: `${skill.level}%` }}
+                          />
+                        </div>
+                      </div>
                     ))}
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-8 shadow-2xl text-white transform hover:-translate-y-2 transition-all">
+              <Award className="mb-4" size={40} />
+              <h3 className="text-2xl font-bold mb-3">FinGuard Pro</h3>
+              <p className="text-blue-50 mb-4 leading-relaxed">XGBoost-based fraud detection achieving 97% accuracy with SHAP explainability. Published in IEEE ICAAIC 2025.</p>
+              <div className="text-sm text-blue-100 font-semibold">ISBN: 979-8-3315-6587-9</div>
+            </div>
+
+            <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl p-8 shadow-2xl text-white transform hover:-translate-y-2 transition-all">
+              <BookOpen className="mb-4" size={40} />
+              <h3 className="text-2xl font-bold mb-3">Fake News Detection</h3>
+              <p className="text-purple-50 mb-4 leading-relaxed">Hybrid BERT-LSTM model with SHAP achieving 96.5% accuracy. Published in ICASET Conference 2025.</p>
+              <div className="flex items-center gap-2 text-purple-100 font-semibold">
+                <Users size={18} />
+                Real-Time Explainable AI
+              </div>
             </div>
           </div>
         </div>
