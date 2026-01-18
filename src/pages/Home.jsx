@@ -106,7 +106,7 @@ const HomePage = ({ setActiveTab }) => {
               <ArrowRight size={18} />
             </button>
             <a
-              href="/resume.pdf"
+              href="/Somaskandan_New.pdf"
               download
               className="px-8 py-4 bg-white border-2 border-blue-600 text-blue-600 rounded-xl hover:bg-blue-50 transition-all transform hover:-translate-y-1 flex items-center gap-2 font-semibold shadow-md"
             >
