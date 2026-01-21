@@ -1,170 +1,180 @@
-import React from 'react';
-import { Github, ExternalLink, Award, TrendingUp } from 'lucide-react';
+import React, { useState } from "react";
+import { Github } from "lucide-react";
 
 const ProjectsPage = () => {
+  const [filter, setFilter] = useState("All");
+  const [expanded, setExpanded] = useState(null);
+
   const projects = [
     {
-      title: "FinGuard Pro: Real-Time Fraud Detection",
+      title: "FinGuard Pro: Explainable Fraud Detection",
+      category: "ML",
       description:
-        "End-to-end fraud detection and risk scoring pipeline using XGBoost on highly imbalanced UPI transaction dataset with SHAP-based explainability for audit workflows",
-      tech: ["XGBoost", "SHAP", "Python", "SQL", "FastAPI", "Streamlit"],
-      metrics: ["97% Accuracy", "94% Recall", "ROC-AUC 0.995", "<3s Latency"],
+        "End-to-end fraud detection pipeline using XGBoost on imbalanced UPI transactions with SHAP-based explainability for compliance and audit workflows.",
+      tech: ["XGBoost", "SHAP", "FastAPI", "SQL", "Python"],
+      metrics: ["94% Recall", "ROC-AUC 0.995", "<3s Latency"],
       impact:
-        "Architected production-ready fraud detection pipeline with transaction-level root-cause analysis",
+        "Delivered transaction-level root-cause analysis for real-world fraud detection systems.",
       link: "https://github.com/Somaskandan931/FinGuardPro",
-      demo: "https://drive.google.com/file/d/1LTMYP7VPCpklF0AAOyjAVMimyFERYrCS/view",
+      demo: "https://drive.google.com/file/d/1LTMYP7VPCpklF0AAOyjAVMimyFERYrCS/view?usp=sharing",
       status: "IEEE Published",
       publication: "ICAAIC 2025 (ISBN: 979-8-3315-6587-9)",
       date: "2025"
     },
     {
-      title: "SourceUp: Procurement Intelligence Platform",
+      title: "EXPLAIN: Multilingual Fake News Detection",
+      category: "NLP",
       description:
-        "Semantic supplier search engine using Sentence-BERT embeddings and FAISS with LightGBM learning-to-rank model for optimized result relevance",
-      tech: ["Sentence-BERT", "FAISS", "LightGBM", "FastAPI", "Redis"],
-      metrics: ["NDCG@10: 0.744", "+9.2% Improvement", "10k+ Suppliers"],
+        "Transformer-based multilingual fake news detection across 30+ languages using hybrid routing for low-resource scenarios.",
+      tech: ["XLM-R", "IndicBERT", "FastText", "PyTorch"],
+      metrics: ["Macro-F1 0.914", "30+ Languages", "86k+ Samples"],
       impact:
-        "Eliminated infeasible matches and improved sourcing efficiency with low-latency semantic retrieval",
-      link: "https://github.com/Somaskandan931/SourceUp",
-      demo: "https://drive.google.com/file/d/1DbSymRpBRE23KeZ_wRbQQlbEPcNqokz8/view",
-      status: "Production Ready",
+        "Enabled scalable misinformation detection across diverse linguistic contexts.",
+      link: "https://github.com/Somaskandan931/EXPLAIN",
+      demo: "", // Removed because no demo link provided
+      status: "Research Project",
       date: "2025"
     },
     {
-      title: "CareerGenie: Resume-Job Matching (RAG)",
+      title: "CareerGenie: Resume–Job Matching (RAG)",
+      category: "RAG",
       description:
-        "Retrieval-Augmented Generation pipeline combining semantic retrieval with LLM reasoning for intelligent resume-to-job matching with ATS optimization",
-      tech: ["Sentence-Transformers", "ChromaDB", "RAG", "LaTeX", "Python"],
-      metrics: ["Semantic Search", "Location-Aware", "ATS Optimized"],
+        "Retrieval-Augmented Generation system combining semantic retrieval with LLM reasoning for intelligent resume–job matching.",
+      tech: ["Sentence-Transformers", "ChromaDB", "RAG", "Python"],
+      metrics: ["Semantic Search", "Skill Gap Analysis"],
       impact:
-        "Implemented embedding-based indexing for query-aware retrieval and automated resume generation",
+        "Improved job relevance and automated ATS-optimized resume generation.",
       link: "https://github.com/Somaskandan931/CareerGenie",
-      demo: "https://drive.google.com/file/d/1bzKgHFzkdb9tGm2GzU2xQyOVL-soQPkW/view",
-      status: "Active Development",
+      demo: "https://drive.google.com/file/d/1bzKgHFzkdb9tGm2GzU2xQyOVL-soQPkW/view?usp=sharing",
+      status: "RAG System",
       date: "2025"
     },
     {
-      title: "PaperMind: Academic Paper Recommender",
+      title: "PaperMind: Semantic Paper Recommender",
+      category: "RAG",
       description:
-        "Full-stack semantic search platform using LLM embeddings and vector similarity for academic paper discovery with GPT-based explanations",
-      tech: ["FastAPI", "React", "OpenAI API", "FAISS", "Tailwind"],
-      metrics: ["Semantic Scholar API", "arXiv Integration", "Vector Search"],
+        "Academic paper recommender using vector embeddings and LLM-based relevance explanations.",
+      tech: ["OpenAI API", "FAISS", "FastAPI", "React"],
+      metrics: ["Semantic Scholar API", "Vector Search"],
       impact:
-        "Built intelligent paper discovery system with semantic understanding and AI-powered insights",
+        "Accelerated research discovery through semantic understanding.",
       link: "https://github.com/Somaskandan931/PaperMind",
-      demo: "https://drive.google.com/file/d/1-phNt-Mw1EcSic8PP1Ris-BR6nwAM_We/view",
+      demo: "https://drive.google.com/file/d/1-phNt-Mw1EcSic8PP1Ris-BR6nwAM_We/view?usp=sharing",
       status: "Active Development",
       date: "2024"
+    },
+    {
+      title: "S.A.F.E: Crowd Anomaly Detection",
+      category: "CV",
+      description:
+        "Real-time crowd risk detection using optical flow signals and unsupervised anomaly detection.",
+      tech: ["OpenCV", "Optical Flow", "Isolation Forest", "Streamlit"],
+      metrics: ["Real-Time", "Unsupervised"],
+      impact:
+        "Enabled early crowd escalation detection in dense environments.",
+      link: "https://github.com/Somaskandan931/S.A.F.E",
+      demo: "https://drive.google.com/file/d/1ASMneQJORP1C4Qyo42KwxwXffuGKLMeD/view?usp=sharing",
+      status: "AI Safety System",
+      date: "2025"
+    },
+    {
+      title: "SourceUp: Procurement Intelligence",
+      category: "ML",
+      description:
+        "Semantic supplier discovery platform with learning-to-rank optimization.",
+      tech: ["Sentence-BERT", "LightGBM", "FAISS", "Redis"],
+      metrics: ["NDCG@10 0.744", "+9.2% Relevance"],
+      impact:
+        "Improved supplier sourcing efficiency with explainable ranking.",
+      link: "https://github.com/Somaskandan931/SourceUp",
+      demo: "https://drive.google.com/file/d/1DbSymRpBRE23KeZ_wRbQQlbEPcNqokz8/view?usp=sharing",
+      status: "Production Ready",
+      date: "2025"
     }
   ];
+
+  const filters = ["All", "ML", "NLP", "RAG", "CV"];
+
+  const visibleProjects =
+    filter === "All"
+      ? projects
+      : projects.filter((p) => p.category === filter);
 
   return (
     <div className="min-h-screen bg-gray-50 pt-24 pb-16">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Projects</h2>
-          <p className="text-xl text-gray-600">
-            Production-ready ML systems with proven business impact
-          </p>
+        <h2 className="text-4xl font-bold text-center mb-6">Projects</h2>
+
+        {/* Filters */}
+        <div className="flex justify-center gap-3 mb-12 flex-wrap">
+          {filters.map((f) => (
+            <button
+              key={f}
+              onClick={() => setFilter(f)}
+              className={`px-4 py-2 rounded-full font-semibold text-sm transition ${
+                filter === f
+                  ? "bg-blue-600 text-white"
+                  : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+              }`}
+            >
+              {f}
+            </button>
+          ))}
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, idx) => (
+          {visibleProjects.map((project, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-2xl p-8 shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all transform hover:-translate-y-2"
+              className="bg-white rounded-2xl p-8 shadow-lg border hover:shadow-2xl transition"
             >
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="text-2xl font-bold text-gray-900 flex-1 pr-4">
-                  {project.title}
-                </h3>
-                <span className="text-sm font-semibold text-gray-500">
-                  {project.date}
-                </span>
-              </div>
+              <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+              <p className="text-sm text-gray-500 mb-3">{project.date}</p>
 
-              <div className="mb-4">
-                <span className="inline-block px-4 py-2 rounded-lg text-sm font-bold bg-blue-100 text-blue-700">
-                  {project.status}
-                </span>
-              </div>
-
-              {project.publication && (
-                <div className="mb-4 bg-purple-50 border-l-4 border-purple-600 p-4 rounded-r-lg">
-                  <p className="text-sm font-bold text-purple-900 mb-1 flex items-center gap-2">
-                    <Award size={16} />
-                    Publication
-                  </p>
-                  <p className="text-xs text-purple-700 font-mono">
-                    {project.publication}
-                  </p>
-                </div>
-              )}
-
-              <p className="text-gray-700 mb-4 leading-relaxed">
-                {project.description}
+              <p className="text-gray-700 mb-4">
+                {expanded === idx
+                  ? project.description
+                  : project.description.slice(0, 120) + "..."}
               </p>
 
-              <div className="mb-4 bg-green-50 p-4 rounded-lg border border-green-200">
-                <p className="text-sm font-bold text-green-900 mb-2 flex items-center gap-2">
-                  <TrendingUp size={16} />
-                  Key Metrics
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.metrics.map((metric, mIdx) => (
-                    <span
-                      key={mIdx}
-                      className="px-3 py-1 bg-green-600 text-white rounded-full text-xs font-bold"
-                    >
-                      {metric}
-                    </span>
-                  ))}
-                </div>
+              <button
+                onClick={() => setExpanded(expanded === idx ? null : idx)}
+                className="text-blue-600 font-semibold text-sm mb-4"
+              >
+                {expanded === idx ? "Show Less" : "Show More"}
+              </button>
+
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.tech.map((t, i) => (
+                  <span
+                    key={i}
+                    className="px-3 py-1 bg-gray-100 rounded-full text-xs font-semibold"
+                  >
+                    {t}
+                  </span>
+                ))}
               </div>
 
-              <div className="mb-4 bg-blue-50 p-4 rounded-lg border border-blue-200">
-                <p className="text-sm font-bold text-blue-900 mb-2">
-                  Business Impact
-                </p>
-                <p className="text-sm text-blue-800">{project.impact}</p>
-              </div>
-
-              <div className="mb-4">
-                <p className="text-sm font-bold text-gray-900 mb-2">
-                  Tech Stack
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech, techIdx) => (
-                    <span
-                      key={techIdx}
-                      className="px-3 py-1 bg-gray-100 text-gray-800 rounded-lg text-xs font-semibold border border-gray-300"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="flex flex-wrap gap-3">
+              <div className="flex gap-3">
                 <a
                   href={project.link}
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition-all font-semibold"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-lg"
                 >
-                  <Github size={18} />
+                  <Github size={16} />
                   GitHub
-                  <ExternalLink size={16} />
                 </a>
-
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-lg hover:shadow-lg transition-all font-semibold"
-                >
-                  Project Demo
-                </a>
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg"
+                  >
+                    Demo
+                  </a>
+                )}
               </div>
             </div>
           ))}
