@@ -22,19 +22,30 @@ const ProjectsPage = () => {
       date: "2025"
     },
     {
-      title: "EXPLAIN: Multilingual Fake News Detection",
-      category: "NLP",
-      description:
-        "Transformer-based multilingual fake news detection across 30+ languages using hybrid routing for low-resource scenarios.",
-      tech: ["XLM-R", "IndicBERT", "FastText", "PyTorch"],
-      metrics: ["Macro-F1 0.914", "30+ Languages", "86k+ Samples"],
-      impact:
-        "Enabled scalable misinformation detection across diverse linguistic contexts.",
-      link: "https://github.com/Somaskandan931/EXPLAIN",
-      demo: "", // Removed because no demo link provided
-      status: "Research Project",
-      date: "2025"
-    },
+  title: "Redline: Preventive Healthcare Chatbot",
+  category: "NLP",
+  description:
+    "India-centric, multilingual preventive healthcare chatbot using IndicBERT for intent classification, safe home-care guidance, vaccination awareness, and doctor-visit decision support with ethical guardrails.",
+  tech: [
+    "IndicBERT",
+    "FastAPI",
+    "Telegram Bot API",
+    "Python",
+    "Rule-Based NLP"
+  ],
+  metrics: [
+    "80%+ Intent Accuracy",
+    "Confidence-Aware Responses",
+    "Real-Time Decisions"
+  ],
+  impact:
+    "Enabled first-touch health awareness while actively preventing medical misinformation in low-literacy settings.",
+  link: "https://github.com/Somaskandan931/Redline",
+  demo: "", // optional – add later if you have one
+  status: "Healthcare AI System",
+  date: "2026"
+},
+
     {
       title: "CareerGenie: Resume–Job Matching (RAG)",
       category: "RAG",
