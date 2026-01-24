@@ -111,8 +111,8 @@ const ProjectsPage = () => {
   impact:
     "Enabled first-touch health awareness while actively preventing medical misinformation in low-literacy settings.",
   link: "https://github.com/Somaskandan931/Redline",
-  demo: "", // optional – add later if you have one
-  status: "Healthcare AI System",
+  demo: "https://drive.google.com/file/d/1X8bDW5r7MXTWSg1QwieaDN-UpV8y10wD/view?usp=sharing", // optional – add later if you have one
+  status: "Healthcare AI Chatbot",
   date: "2026"
 }
 
