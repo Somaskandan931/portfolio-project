@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, Users, BookOpen, ExternalLink, GraduationCap, Shield, Users2 } from 'lucide-react';
+import { Award, BookOpen, ExternalLink, GraduationCap, Shield, Users2 } from 'lucide-react';
 
 const AboutPage = () => {
   const publications = [
