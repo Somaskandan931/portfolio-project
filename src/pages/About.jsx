@@ -1,149 +1,226 @@
 import React from 'react';
-import { Award, Users, BookOpen } from 'lucide-react';
+import { Award, Users, BookOpen, ExternalLink, GraduationCap, Shield, Users2 } from 'lucide-react';
 
 const AboutPage = () => {
-  const certifications = [
+  const publications = [
     {
       title: "FinGuard Pro: Explainable AI for Financial Fraud Detection",
-      issuer: "IEEE ICAAIC 2025",
-      date: "Dec 2025",
-      id: "ISBN: 979-8-3315-6587-9",
-      type: "Publication",
-      color: "purple"
+      venue: "IEEE ICAAIC 2025",
+      date: "DEC 2025",
+      isbn: "979-8-3315-6587-9",
+      link: "https://ieeexplore.ieee.org/document/11330750"
     },
     {
       title: "Real-Time Explainable Fake News Detection using BERT-LSTM",
-      issuer: "IFERP - ICASET Conference",
-      date: "Mar 2025",
-      id: "IFERP20250322_ICASET_CHE_2230",
-      type: "Publication",
-      color: "blue"
+      venue: "IFERP - ICASET",
+      date: "MAR 2025",
+      isbn: "IFERP20250322_ICASET_CHE_2230"
     },
+  ];
+
+  const certifications = [
     {
       title: "AI and Machine Learning Course",
       issuer: "Space Zee Technologies",
-      date: "Jun 2024",
-      id: "SZ_CCC_2024_0012",
-      type: "Certification",
-      grade: "A+",
-      color: "green"
+      date: "JUN 2024",
+      grade: "A+"
     },
     {
       title: "Python Core",
       issuer: "Space Zee Technologies",
-      date: "Feb 2024",
-      id: "SZ_CCC_2023_0051",
-      type: "Certification",
-      grade: "A+",
-      color: "orange"
+      date: "FEB 2024",
+      grade: "A+"
+    }
+  ];
+
+  const education = [
+    {
+      degree: "M.Sc. Computer Science",
+      specialization: "AI SPECIALIZATION",
+      institution: "Sathyabama Institute",
+      year: "2027",
+      status: "IN PROGRESS"
+    },
+    {
+      degree: "B.Sc. Computer Science",
+      specialization: "AI SPECIALIZATION",
+      institution: "Sathyabama Institute",
+      year: "2022-2025",
+      status: "FIRST CLASS"
+    },
+    {
+      degree: "GCE A-Level",
+      specialization: "SINGAPORE-CAMBRIDGE",
+      institution: "Jurong Pioneer JC",
+      year: "2018-2019",
+      status: "COMPLETED"
+    }
+  ];
+
+  const leadership = [
+    {
+      role: "NCC Staff Sergeant",
+      detail: "Led 20+ cadets | Gold Award Winner",
+      icon: Shield
+    },
+    {
+      role: "Tamil Poetry Creator",
+      detail: "@skandan_kavithaigal | 60+ followers",
+      icon: BookOpen
+    },
+    {
+      role: "Community Volunteer",
+      detail: "AWWA & Woodlands EDC",
+      icon: Users2
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-24 pb-16">
-      <div className="max-w-5xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
-          <p className="text-xl text-gray-600">Applied Machine Learning Engineer & AI Researcher</p>
-        </div>
+    <div className="min-h-screen bg-black text-white pt-32 pb-20 px-6">
+      <div className="max-w-7xl mx-auto">
 
-        <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl p-8 mb-12 text-white shadow-2xl">
-          <h3 className="text-2xl font-bold mb-4">Professional Summary</h3>
-          <p className="text-lg leading-relaxed text-blue-50">
-            Applied Machine Learning Engineer with hands-on experience building <span className="font-bold text-white">end-to-end, production-style ML systems</span> for fraud detection, semantic search, and ranking problems. Strong focus on <span className="font-bold text-white">model performance, explainability using SHAP</span>, and business-aligned evaluation with XGBoost, LightGBM, and modern NLP pipelines deployed via FastAPI.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
-            <h3 className="text-2xl font-bold mb-6 text-gray-900 flex items-center gap-2">
-              <BookOpen className="text-blue-500" />
-              Education
-            </h3>
-            <div className="space-y-6">
-              <div className="border-l-4 border-blue-600 pl-4">
-                <h4 className="font-bold text-lg text-gray-900">M.Sc. Computer Science (AI Specialization)</h4>
-                <p className="text-gray-600 font-semibold">Sathyabama Institute of Science and Technology</p>
-                <p className="text-sm text-gray-500">Expected 2027</p>
-              </div>
-              <div className="border-l-4 border-purple-600 pl-4">
-                <h4 className="font-bold text-lg text-gray-900">B.Sc. Computer Science (AI Specialization)</h4>
-                <p className="text-gray-600 font-semibold">Sathyabama Institute of Science and Technology</p>
-                <p className="text-sm text-gray-500">2022 - 2025 | First Class</p>
-              </div>
-              <div className="border-l-4 border-green-600 pl-4">
-                <h4 className="font-bold text-lg text-gray-900">Singapore-Cambridge GCE A-Level</h4>
-                <p className="text-gray-600 font-semibold">Jurong Pioneer Junior College, Singapore</p>
-                <p className="text-sm text-gray-500">2018 - 2019</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
-            <h3 className="text-2xl font-bold mb-6 text-gray-900 flex items-center gap-2">
-              <Users className="text-purple-500" />
-              Leadership & Community
-            </h3>
-            <div className="space-y-4">
-              <div className="flex items-start gap-3 p-4 bg-blue-50 rounded-xl">
-                <Award className="text-blue-500 mt-1 flex-shrink-0" size={20} />
-                <div>
-                  <h4 className="font-bold text-gray-900">NCC Staff Sergeant</h4>
-                  <p className="text-sm text-gray-600">Led 20+ cadets, Gold Award in Best Unit Competition (2015)</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 p-4 bg-purple-50 rounded-xl">
-                <BookOpen className="text-purple-500 mt-1 flex-shrink-0" size={20} />
-                <div>
-                  <h4 className="font-bold text-gray-900">Tamil Poetry Creator</h4>
-                  <p className="text-sm text-gray-600">@skandan_kavithaigal - Author of original Tamil poetry with 60+ followers</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 p-4 bg-green-50 rounded-xl">
-                <Users className="text-green-500 mt-1 flex-shrink-0" size={20} />
-                <div>
-                  <h4 className="font-bold text-gray-900">Community Service Volunteer</h4>
-                  <p className="text-sm text-gray-600">Asian Women's Welfare Association(AWWA) and Woodlands Employment Development Centre</p>
-                </div>
-              </div>
-            </div>
+        {/* Header */}
+        <div className="mb-20">
+          <h1 className="text-6xl md:text-8xl font-black mb-6 leading-none">
+            <span className="text-white">ABOUT</span>
+            <br />
+            <span className="text-amber-400">ME</span>
+          </h1>
+          <div className="max-w-3xl border-l-4 border-amber-400 pl-8">
+            <p className="text-2xl text-gray-300 leading-relaxed">
+              Applied Machine Learning Engineer with hands-on experience building
+              <span className="text-amber-400 font-bold"> end-to-end, production-style ML systems</span> for
+              fraud detection, semantic search, and ranking problems.
+            </p>
           </div>
         </div>
 
-        <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
-          <h3 className="text-2xl font-bold mb-6 text-gray-900 flex items-center gap-2">
-            <Award className="text-yellow-500" />
-            Publications & Certifications
-          </h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            {certifications.map((cert, idx) => (
-              <div key={idx} className={`border-2 rounded-xl p-6 hover:shadow-lg transition-all transform hover:-translate-y-1 ${
-                cert.type === 'Publication'
-                  ? cert.color === 'purple' ? 'border-purple-400 bg-purple-50' : 'border-blue-400 bg-blue-50'
-                  : cert.color === 'green' ? 'border-green-300 bg-green-50' : 'border-orange-300 bg-orange-50'
-              }`}>
-                <div className="flex justify-between items-start mb-3">
-                  <span className={`px-3 py-1 rounded-lg text-xs font-bold uppercase ${
-                    cert.type === 'Publication'
-                      ? cert.color === 'purple' ? 'bg-purple-600 text-white' : 'bg-blue-600 text-white'
-                      : cert.color === 'green' ? 'bg-green-200 text-green-800' : 'bg-orange-200 text-orange-800'
-                  }`}>
-                    {cert.type}
-                  </span>
-                  {cert.grade && (
-                    <span className="text-sm font-bold text-green-600">{cert.grade}</span>
-                  )}
-                </div>
-                <h4 className="font-bold text-gray-900 mb-2 leading-tight">{cert.title}</h4>
-                <p className="text-sm text-gray-700 font-semibold mb-2">{cert.issuer}</p>
-                <div className="space-y-1">
-                  <p className="text-xs text-gray-500">{cert.date}</p>
-                  <p className="text-xs text-gray-400 font-mono">{cert.id}</p>
+        {/* Education Grid */}
+        <div className="mb-20">
+          <h2 className="text-4xl font-black mb-10 text-amber-400 tracking-tight">
+            <GraduationCap className="inline mr-4" size={40} />
+            EDUCATION
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {education.map((edu, idx) => (
+              <div
+                key={idx}
+                className="border-2 border-gray-800 hover:border-amber-400 p-8 transition-all duration-300 group bg-gradient-to-br from-gray-900/50 to-black"
+              >
+                <div className="text-xs font-bold text-amber-400 mb-3 tracking-widest">{edu.specialization}</div>
+                <h3 className="text-2xl font-black text-white mb-2 leading-tight">{edu.degree}</h3>
+                <p className="text-sm text-gray-400 mb-4">{edu.institution}</p>
+                <div className="flex justify-between items-center pt-4 border-t border-gray-800">
+                  <span className="text-xs text-gray-500 font-bold">{edu.year}</span>
+                  <span className="text-xs font-bold text-amber-400">{edu.status}</span>
                 </div>
               </div>
             ))}
           </div>
         </div>
+
+        {/* Publications - Featured Section */}
+        <div className="mb-20">
+          <h2 className="text-4xl font-black mb-10 text-amber-400 tracking-tight">
+            <Award className="inline mr-4" size={40} />
+            PUBLICATIONS
+          </h2>
+          <div className="space-y-6">
+            {publications.map((pub, idx) => (
+              <div
+                key={idx}
+                className="border-2 border-amber-400 bg-gradient-to-r from-amber-400/10 to-transparent p-8 hover:from-amber-400/20 transition-all duration-300"
+              >
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+                  <div className="flex-1">
+                    <div className="text-xs font-bold text-amber-400 mb-3 tracking-widest">{pub.date} • {pub.venue}</div>
+                    <h3 className="text-2xl md:text-3xl font-black text-white mb-4 leading-tight">{pub.title}</h3>
+                    <div className="text-sm text-gray-400 font-mono">{pub.isbn}</div>
+                  </div>
+                  {pub.link && (
+                    <a
+                      href={pub.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-8 py-4 bg-amber-400 text-black font-bold uppercase tracking-wider hover:bg-white transition-all duration-300 flex items-center gap-3 whitespace-nowrap"
+                    >
+                      READ PAPER
+                      <ExternalLink size={18} />
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Two Column Layout */}
+        <div className="grid md:grid-cols-2 gap-12 mb-20">
+
+          {/* Certifications */}
+          <div>
+            <h2 className="text-3xl font-black mb-8 text-white border-b-2 border-gray-800 pb-4">
+              CERTIFICATIONS
+            </h2>
+            <div className="space-y-6">
+              {certifications.map((cert, idx) => (
+                <div
+                  key={idx}
+                  className="border-l-4 border-amber-400 pl-6 py-4 hover:pl-8 transition-all duration-300"
+                >
+                  <h3 className="text-xl font-bold text-white mb-2">{cert.title}</h3>
+                  <p className="text-sm text-gray-400 mb-2">{cert.issuer}</p>
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs text-gray-500 uppercase tracking-wider">{cert.date}</span>
+                    <span className="px-3 py-1 bg-amber-400 text-black text-xs font-bold">{cert.grade}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Leadership */}
+          <div>
+            <h2 className="text-3xl font-black mb-8 text-white border-b-2 border-gray-800 pb-4">
+              LEADERSHIP
+            </h2>
+            <div className="space-y-6">
+              {leadership.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="border-2 border-gray-800 hover:border-amber-400 p-6 transition-all duration-300 group"
+                >
+                  <div className="flex items-start gap-4">
+                    <item.icon className="text-amber-400 flex-shrink-0 mt-1" size={24} />
+                    <div>
+                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">
+                        {item.role}
+                      </h3>
+                      <p className="text-sm text-gray-400">{item.detail}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="border-4 border-amber-400 p-12 text-center bg-gradient-to-br from-amber-400/5 to-transparent">
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
+            READY TO BUILD SOMETHING?
+          </h2>
+          <p className="text-xl text-gray-300 mb-8">
+            Let's create ML systems that actually work.
+          </p>
+          <a
+            href="mailto:somaskandan931@gmail.com"
+            className="inline-block px-12 py-5 bg-amber-400 text-black font-bold text-lg uppercase tracking-wider hover:bg-white transition-all duration-300"
+          >
+            GET IN TOUCH
+          </a>
+        </div>
+
       </div>
     </div>
   );

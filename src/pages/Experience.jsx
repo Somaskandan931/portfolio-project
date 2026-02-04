@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Calendar, ChevronRight } from 'lucide-react';
+import { Briefcase, MapPin, Calendar, ArrowRight } from 'lucide-react';
 
 const ExperiencePage = () => {
   const experience = [
@@ -7,8 +7,8 @@ const ExperiencePage = () => {
       role: "Data Analyst Intern",
       company: "India Advocacy",
       location: "Chennai, India",
-      period: "Jul 2024 - Oct 2024",
-      type: "Internship",
+      period: "JUL 2024 - OCT 2024",
+      type: "INTERNSHIP",
       achievements: [
         "Cleaned, filtered, and structured over 1M web records, reducing to 15-20k high-quality records for targeted outreach campaigns",
         "Built automated data extraction pipelines using Java and Selenium to improve data collection efficiency by 40%",
@@ -18,11 +18,11 @@ const ExperiencePage = () => {
       skills: ["Python", "Java", "Selenium", "Data Cleaning", "Excel", "Automation"]
     },
     {
-      role: "Security Trooper (National Service)",
+      role: "Security Trooper",
       company: "Singapore Armed Forces",
       location: "Singapore",
-      period: "Jan 2020 - Jan 2022",
-      type: "Full-time",
+      period: "JAN 2020 - JAN 2022",
+      type: "NATIONAL SERVICE",
       achievements: [
         "Managed operations of the Pass Making Office (PMO), ensuring 100% compliance with security protocols",
         "Collaborated with Ministry of Health COVID-19 Task Force to implement containment strategies during pandemic",
@@ -32,11 +32,11 @@ const ExperiencePage = () => {
       skills: ["Operations Management", "Data Collection", "Reporting", "Teamwork"]
     },
     {
-      role: "Sales Associate (Part-Time)",
+      role: "Sales Associate",
       company: "Bata",
       location: "Singapore",
-      period: "Feb 2022 - Aug 2022",
-      type: "Part-time",
+      period: "FEB 2022 - AUG 2022",
+      type: "PART-TIME",
       achievements: [
         "Guided customers in product selection, improving sales conversion rate by 15%",
         "Managed point-of-sale systems with 100% accuracy in transaction processing",
@@ -49,8 +49,8 @@ const ExperiencePage = () => {
       role: "Podcast Head",
       company: "Sathyabama Institute - Philosophy Club",
       location: "Chennai, India",
-      period: "Jan 2023 - Jan 2024",
-      type: "Leadership",
+      period: "JAN 2023 - JAN 2024",
+      type: "LEADERSHIP",
       achievements: [
         "Spearheaded creation and growth of 'The Socratic Method' Spotify podcast for Philosophy and Open Discussion Club",
         "Managed podcast lifecycle: ideation, scripting, speaker outreach, editing, and publishing",
@@ -62,70 +62,132 @@ const ExperiencePage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-24 pb-16">
-      <div className="max-w-5xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Professional Experience</h2>
-          <p className="text-xl text-gray-600">Building skills across data, operations, and leadership</p>
+    <div className="min-h-screen bg-black text-white pt-32 pb-20 px-6">
+      <div className="max-w-7xl mx-auto">
+
+        {/* Header */}
+        <div className="mb-20">
+          <h1 className="text-6xl md:text-8xl font-black mb-6 leading-none">
+            <span className="text-white">WORK</span>
+            <br />
+            <span className="text-amber-400">EXPERIENCE</span>
+          </h1>
+          <p className="text-xl text-gray-400 max-w-2xl border-l-4 border-amber-400 pl-6">
+            Building skills across data, operations, and leadership
+          </p>
         </div>
 
+        {/* Timeline */}
         <div className="relative">
-          <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-600 to-purple-600"></div>
+          {/* Vertical line */}
+          <div className="absolute left-0 md:left-12 top-0 bottom-0 w-0.5 bg-amber-400"></div>
 
-          <div className="space-y-12">
+          <div className="space-y-16">
             {experience.map((exp, idx) => (
-              <div key={idx} className="relative pl-20">
-                <div className="absolute left-4 w-9 h-9 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg ring-4 ring-white">
-                  {idx + 1}
-                </div>
+              <div key={idx} className="relative pl-8 md:pl-28">
+                {/* Timeline dot */}
+                <div className="absolute left-0 md:left-10 w-6 h-6 bg-amber-400 border-4 border-black"></div>
 
-                <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-all transform hover:-translate-y-1">
-                  <div className="flex justify-between items-start mb-4 flex-wrap gap-4">
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-1">{exp.role}</h3>
-                      <p className="text-xl text-blue-600 font-semibold mb-2">{exp.company}</p>
-                      <div className="flex flex-wrap gap-3 text-sm text-gray-600">
-                        <span className="flex items-center gap-1">
-                          <MapPin size={16} className="text-red-500" />
-                          {exp.location}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Calendar size={16} className="text-green-500" />
-                          {exp.period}
-                        </span>
+                {/* Content Card */}
+                <div className="border-2 border-gray-800 hover:border-amber-400 transition-all duration-500 bg-gradient-to-br from-gray-900/50 to-black group">
+                  <div className="p-8">
+
+                    {/* Header */}
+                    <div className="mb-6">
+                      <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
+                        <div className="flex-1">
+                          <div className="text-xs font-bold text-amber-400 tracking-widest mb-2">
+                            {exp.type}
+                          </div>
+                          <h2 className="text-3xl md:text-4xl font-black text-white mb-2 leading-tight group-hover:text-amber-400 transition-colors">
+                            {exp.role}
+                          </h2>
+                          <p className="text-xl text-gray-300 font-bold mb-4">{exp.company}</p>
+                        </div>
+                      </div>
+
+                      {/* Meta Info */}
+                      <div className="flex flex-wrap gap-4 text-sm text-gray-400">
+                        <div className="flex items-center gap-2">
+                          <MapPin size={16} className="text-amber-400" />
+                          <span className="font-mono">{exp.location}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Calendar size={16} className="text-amber-400" />
+                          <span className="font-mono">{exp.period}</span>
+                        </div>
                       </div>
                     </div>
-                    <span className="px-4 py-2 bg-purple-100 text-purple-700 rounded-lg text-sm font-bold">
-                      {exp.type}
-                    </span>
-                  </div>
 
-                  <div className="mb-4">
-                    <h4 className="text-sm font-bold text-gray-900 mb-3 uppercase tracking-wide">Key Achievements</h4>
-                    <div className="space-y-2">
-                      {exp.achievements.map((achievement, achIdx) => (
-                        <div key={achIdx} className="flex items-start gap-3">
-                          <ChevronRight className="text-blue-500 mt-1 flex-shrink-0" size={18} />
-                          <p className="text-gray-700 leading-relaxed">{achievement}</p>
-                        </div>
-                      ))}
+                    {/* Achievements */}
+                    <div className="mb-6">
+                      <h3 className="text-sm font-bold text-amber-400 tracking-widest mb-4">KEY ACHIEVEMENTS</h3>
+                      <div className="space-y-3">
+                        {exp.achievements.map((achievement, achIdx) => (
+                          <div key={achIdx} className="flex items-start gap-3 group/item">
+                            <ArrowRight className="text-amber-400 mt-1 flex-shrink-0 group-hover/item:translate-x-1 transition-transform" size={18} />
+                            <p className="text-gray-300 leading-relaxed">{achievement}</p>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="pt-4 border-t border-gray-200">
-                    <p className="text-sm font-bold text-gray-900 mb-2">Skills Applied</p>
-                    <div className="flex flex-wrap gap-2">
-                      {exp.skills.map((skill, sIdx) => (
-                        <span key={sIdx} className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">
-                          {skill}
-                        </span>
-                      ))}
+                    {/* Skills */}
+                    <div className="pt-6 border-t border-gray-800">
+                      <div className="text-xs font-bold text-gray-500 tracking-widest mb-3">SKILLS APPLIED</div>
+                      <div className="flex flex-wrap gap-2">
+                        {exp.skills.map((skill, sIdx) => (
+                          <span
+                            key={sIdx}
+                            className="px-3 py-1 bg-gray-900 border border-gray-700 text-gray-400 text-xs font-mono hover:border-amber-400 hover:text-amber-400 transition-all duration-300"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Stats */}
+        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="border-2 border-amber-400 p-6 text-center">
+            <div className="text-4xl font-black text-amber-400 mb-2">4+</div>
+            <div className="text-xs text-gray-400 uppercase tracking-wider">Roles</div>
+          </div>
+          <div className="border-2 border-gray-800 p-6 text-center">
+            <div className="text-4xl font-black text-white mb-2">3</div>
+            <div className="text-xs text-gray-400 uppercase tracking-wider">Years</div>
+          </div>
+          <div className="border-2 border-gray-800 p-6 text-center">
+            <div className="text-4xl font-black text-white mb-2">15+</div>
+            <div className="text-xs text-gray-400 uppercase tracking-wider">Skills</div>
+          </div>
+          <div className="border-2 border-amber-400 p-6 text-center">
+            <div className="text-4xl font-black text-amber-400 mb-2">100%</div>
+            <div className="text-xs text-gray-400 uppercase tracking-wider">Delivery</div>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="mt-20 border-2 border-amber-400 p-12 text-center bg-gradient-to-br from-amber-400/5 to-transparent">
+          <Briefcase className="mx-auto mb-6 text-amber-400" size={48} />
+          <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
+            LET'S WORK TOGETHER
+          </h2>
+          <p className="text-lg text-gray-300 mb-8">
+            Looking for opportunities to build production ML systems
+          </p>
+          <a
+            href="mailto:somaskandan931@gmail.com"
+            className="inline-block px-10 py-4 bg-amber-400 text-black font-bold uppercase tracking-wider hover:bg-white transition-all duration-300"
+          >
+            REACH OUT
+          </a>
         </div>
       </div>
     </div>
