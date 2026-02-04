@@ -23,9 +23,9 @@ const NavBar = ({ activeTab, setActiveTab }) => {
                   <Sparkles className="text-amber-400 animate-pulse" size={24} />
                   <div className="absolute inset-0 blur-xl bg-amber-400/50"></div>
                 </div>
-                <div className="font-black text-2xl tracking-tight">
-                  <span className="text-white">SOMA</span>
-                  <span className="text-amber-400">SKANDAN</span>
+                <div className="font-black text-xl md:text-2xl tracking-tight leading-tight">
+                  <span className="text-white">RAJAGOPAL </span>
+                  <span className="text-amber-400">SOMASKANDAN</span>
                 </div>
               </div>
 

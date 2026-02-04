@@ -52,12 +52,12 @@ const HomePage = ({ setActiveTab }) => {
           {/* Hero Section */}
           <div className="mb-20">
             <div className="inline-block mb-8 px-6 py-2 border-2 border-amber-400 transform -skew-x-6">
-              <span className="text-amber-400 font-bold text-sm tracking-widest">M.SC. AI SPECIALIST</span>
+              <span className="text-amber-400 font-bold text-sm tracking-widest">M.SC. Computer Science</span>
             </div>
 
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-black mb-6 leading-none tracking-tight">
-              <span className="block text-white">SOMA</span>
-              <span className="block text-amber-400">SKANDAN</span>
+              <span className="block text-white">RAJAGOPAL</span>
+              <span className="block text-amber-400">SOMASKANDAN</span>
               <span className="block text-white text-4xl md:text-6xl mt-4">{typedText}<span className="animate-pulse">_</span></span>
             </h1>
 
