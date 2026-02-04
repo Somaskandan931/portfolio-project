@@ -9,13 +9,7 @@ const AboutPage = () => {
       date: "DEC 2025",
       isbn: "979-8-3315-6587-9",
       link: "https://ieeexplore.ieee.org/document/11330750"
-    },
-    {
-      title: "Real-Time Explainable Fake News Detection using BERT-LSTM",
-      venue: "IFERP - ICASET",
-      date: "MAR 2025",
-      isbn: "IFERP20250322_ICASET_CHE_2230"
-    },
+    }
   ];
 
   const certifications = [
