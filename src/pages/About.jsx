@@ -1,14 +1,21 @@
 import React from 'react';
-import { Award, BookOpen, ExternalLink, GraduationCap, Shield, Users2 } from 'lucide-react';
+import { Award, BookOpen, ExternalLink, GraduationCap, Shield, Trophy, Users2 } from 'lucide-react';
 
 const AboutPage = () => {
   const publications = [
     {
       title: "FinGuard Pro: Explainable AI for Financial Fraud Detection",
       venue: "IEEE ICAAIC 2025",
-      date: "DEC 2025",
+      date: "2025",
       isbn: "979-8-3315-6587-9",
       link: "https://ieeexplore.ieee.org/document/11330750"
+    },
+    {
+      title: "Real-Time Explainable Fake News Detection System with BERT-LSTM and SHAP",
+      venue: "ICASET-2025 — Presented",
+      date: "MAR 2025",
+      isbn: "Cert. No. IFERP20250322_ICASET_CHE_2230",
+      link: null
     }
   ];
 
@@ -66,6 +73,25 @@ const AboutPage = () => {
       role: "Community Volunteer",
       detail: "AWWA & Woodlands EDC",
       icon: Users2
+    }
+  ];
+
+  const hackathons = [
+    {
+      award: "Best Industry Innovation Award",
+      event: "Industry Innovation Hackathon '26",
+      organizer: "Sathyabama Institute — National Level (with ATRIBS & Bluewind Innovations)",
+      date: "MAR 2026",
+      detail: "Defeated 63+ teams from institutions across India with the CareerGenie AI platform.",
+      icon: Trophy
+    },
+    {
+      award: "Competitor",
+      event: "Origin 24-Hour Hackathon",
+      organizer: "SIMATS Engineering, Chennai",
+      date: "APR 2026",
+      detail: "Competed in a 24-hour sprint organized by the SIMATS Hackathon Club, Saveetha Institute of Medical and Technical Sciences.",
+      icon: Trophy
     }
   ];
 
@@ -129,9 +155,11 @@ const AboutPage = () => {
                   <div className="flex-1">
                     <div className="text-xs font-bold text-amber-400 mb-3 tracking-widest">{pub.date} • {pub.venue}</div>
                     <h3 className="text-2xl md:text-3xl font-black text-white mb-4 leading-tight">{pub.title}</h3>
-                    <div className="text-sm text-gray-400 font-mono">{pub.isbn}</div>
+                    {pub.isbn && (
+                      <div className="text-sm text-gray-400 font-mono">{pub.isbn}</div>
+                    )}
                   </div>
-                  {pub.link && (
+                  {pub.link ? (
                     <a
                       href={pub.link}
                       target="_blank"
@@ -141,7 +169,40 @@ const AboutPage = () => {
                       READ PAPER
                       <ExternalLink size={18} />
                     </a>
+                  ) : (
+                    <div className="px-8 py-4 border-2 border-gray-700 text-gray-400 font-bold uppercase tracking-wider flex items-center gap-3 whitespace-nowrap">
+                      PRESENTED
+                    </div>
                   )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Hackathons */}
+        <div className="mb-20">
+          <h2 className="text-4xl font-black mb-10 text-amber-400 tracking-tight">
+            <Trophy className="inline mr-4" size={40} />
+            HACKATHONS & AWARDS
+          </h2>
+          <div className="space-y-6">
+            {hackathons.map((h, idx) => (
+              <div
+                key={idx}
+                className="border-2 border-gray-800 hover:border-amber-400 p-8 transition-all duration-300 bg-gradient-to-br from-gray-900/50 to-black group"
+              >
+                <div className="flex items-start gap-4">
+                  <h.icon className="text-amber-400 flex-shrink-0 mt-1" size={28} />
+                  <div className="flex-1">
+                    <div className="flex flex-wrap items-center gap-4 mb-2">
+                      <span className="text-xs font-bold text-amber-400 tracking-widest">{h.date}</span>
+                      <span className="px-3 py-1 bg-amber-400 text-black text-xs font-bold">{h.award}</span>
+                    </div>
+                    <h3 className="text-xl font-black text-white mb-1 group-hover:text-amber-400 transition-colors">{h.event}</h3>
+                    <p className="text-sm text-gray-400 mb-2">{h.organizer}</p>
+                    <p className="text-sm text-gray-300">{h.detail}</p>
+                  </div>
                 </div>
               </div>
             ))}

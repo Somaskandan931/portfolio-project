@@ -4,60 +4,53 @@ import { Briefcase, MapPin, Calendar, ArrowRight } from 'lucide-react';
 const ExperiencePage = () => {
   const experience = [
     {
+      role: "Production AI Developer (Intern)",
+      company: "InnoXR Labs Pvt. Ltd.",
+      location: "Chennai, India",
+      period: "MAR 2026 - JUN 2026",
+      type: "INTERNSHIP",
+      achievements: [
+        "Built and deployed ML-powered FastAPI microservices for real-time inference in AR/immersive applications.",
+        "Designed API-first ML systems integrating model inference with scalable backend endpoints.",
+        "Delivered end-to-end features from model development to deployment in a fast-paced startup environment."
+      ],
+      skills: ["FastAPI", "Python", "REST APIs", "Model Deployment", "Microservices", "AR/XR"]
+    },
+    {
       role: "Data Analyst Intern",
       company: "India Advocacy",
       location: "Chennai, India",
       period: "JUL 2024 - OCT 2024",
       type: "INTERNSHIP",
       achievements: [
-        "Cleaned, filtered, and structured over 1M web records, reducing to 15-20k high-quality records for targeted outreach campaigns",
-        "Built automated data extraction pipelines using Java and Selenium to improve data collection efficiency by 40%",
-        "Implemented validation checks aligned with business usability requirements, handling real-world data quality issues",
-        "Generated insightful reports and visualizations to support data-driven decision making across campaigns"
+        "Built Java + Selenium pipelines to scrape and process 1M+ records.",
+        "Transformed raw data into 15–20k structured datasets through multi-stage validation."
       ],
-      skills: ["Python", "Java", "Selenium", "Data Cleaning", "Excel", "Automation"]
+      skills: ["Java", "Selenium", "Data Processing", "Data Cleaning"]
     },
     {
-      role: "Security Trooper",
+      role: "Security Trooper (National Service)",
       company: "Singapore Armed Forces",
       location: "Singapore",
       period: "JAN 2020 - JAN 2022",
       type: "NATIONAL SERVICE",
       achievements: [
-        "Managed operations of the Pass Making Office (PMO), ensuring 100% compliance with security protocols",
-        "Collaborated with Ministry of Health COVID-19 Task Force to implement containment strategies during pandemic",
-        "Operated authorized transport vehicles under regulated operational environments with zero safety incidents",
-        "Maintained detailed security records and generated analytical reports for command leadership"
+        "Executed security operations in regulated environments, ensuring strict protocol compliance and operational readiness.",
+        "Supported COVID-19 response initiatives through structured data collection and reporting under time-sensitive conditions."
       ],
-      skills: ["Operations Management", "Data Collection", "Reporting", "Teamwork"]
+      skills: ["Operations", "Data Collection", "Reporting", "Compliance"]
     },
     {
-      role: "Sales Associate",
+      role: "Sales Associate (Part-Time)",
       company: "Bata",
       location: "Singapore",
       period: "FEB 2022 - AUG 2022",
       type: "PART-TIME",
       achievements: [
-        "Guided customers in product selection, improving sales conversion rate by 15%",
-        "Managed point-of-sale systems with 100% accuracy in transaction processing",
-        "Supported inventory tracking and visual merchandising, reducing stock discrepancies by 20%",
-        "Demonstrated strong communication, time management, and teamwork skills in high-volume retail environment"
+        "Handled high-volume customer interactions in a fast-paced retail environment, ensuring efficient service delivery.",
+        "Managed billing, inventory coordination, and issue resolution to support smooth store operations."
       ],
-      skills: ["Customer Service", "Sales", "POS Systems", "Inventory Management"]
-    },
-    {
-      role: "Podcast Head",
-      company: "Sathyabama Institute - Philosophy Club",
-      location: "Chennai, India",
-      period: "JAN 2023 - JAN 2024",
-      type: "LEADERSHIP",
-      achievements: [
-        "Spearheaded creation and growth of 'The Socratic Method' Spotify podcast for Philosophy and Open Discussion Club",
-        "Managed podcast lifecycle: ideation, scripting, speaker outreach, editing, and publishing",
-        "Produced Women's Day Special and premiere 'college life' episodes with positive audience reception",
-        "Handled post-production using DaVinci Resolve, sourced original jingles, and ensured professional audio quality"
-      ],
-      skills: ["Content Creation", "Audio Editing", "Project Management", "Leadership"]
+      skills: ["Customer Service", "Sales", "Inventory", "POS Systems"]
     }
   ];
 
@@ -73,22 +66,19 @@ const ExperiencePage = () => {
             <span className="text-amber-400">EXPERIENCE</span>
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl border-l-4 border-amber-400 pl-6">
-            Building skills across data, operations, and leadership
+            Experience building production-grade AI systems and working across data, operations, and real-world environments
           </p>
         </div>
 
         {/* Timeline */}
         <div className="relative">
-          {/* Vertical line */}
           <div className="absolute left-0 md:left-12 top-0 bottom-0 w-0.5 bg-amber-400"></div>
 
           <div className="space-y-16">
             {experience.map((exp, idx) => (
               <div key={idx} className="relative pl-8 md:pl-28">
-                {/* Timeline dot */}
                 <div className="absolute left-0 md:left-10 w-6 h-6 bg-amber-400 border-4 border-black"></div>
 
-                {/* Content Card */}
                 <div className="border-2 border-gray-800 hover:border-amber-400 transition-all duration-500 bg-gradient-to-br from-gray-900/50 to-black group">
                   <div className="p-8">
 
@@ -106,7 +96,6 @@ const ExperiencePage = () => {
                         </div>
                       </div>
 
-                      {/* Meta Info */}
                       <div className="flex flex-wrap gap-4 text-sm text-gray-400">
                         <div className="flex items-center gap-2">
                           <MapPin size={16} className="text-amber-400" />
@@ -124,8 +113,8 @@ const ExperiencePage = () => {
                       <h3 className="text-sm font-bold text-amber-400 tracking-widest mb-4">KEY ACHIEVEMENTS</h3>
                       <div className="space-y-3">
                         {exp.achievements.map((achievement, achIdx) => (
-                          <div key={achIdx} className="flex items-start gap-3 group/item">
-                            <ArrowRight className="text-amber-400 mt-1 flex-shrink-0 group-hover/item:translate-x-1 transition-transform" size={18} />
+                          <div key={achIdx} className="flex items-start gap-3">
+                            <ArrowRight className="text-amber-400 mt-1 flex-shrink-0" size={18} />
                             <p className="text-gray-300 leading-relaxed">{achievement}</p>
                           </div>
                         ))}
@@ -146,30 +135,11 @@ const ExperiencePage = () => {
                         ))}
                       </div>
                     </div>
+
                   </div>
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Stats */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="border-2 border-amber-400 p-6 text-center">
-            <div className="text-4xl font-black text-amber-400 mb-2">4+</div>
-            <div className="text-xs text-gray-400 uppercase tracking-wider">Roles</div>
-          </div>
-          <div className="border-2 border-gray-800 p-6 text-center">
-            <div className="text-4xl font-black text-white mb-2">3</div>
-            <div className="text-xs text-gray-400 uppercase tracking-wider">Years</div>
-          </div>
-          <div className="border-2 border-gray-800 p-6 text-center">
-            <div className="text-4xl font-black text-white mb-2">15+</div>
-            <div className="text-xs text-gray-400 uppercase tracking-wider">Skills</div>
-          </div>
-          <div className="border-2 border-amber-400 p-6 text-center">
-            <div className="text-4xl font-black text-amber-400 mb-2">100%</div>
-            <div className="text-xs text-gray-400 uppercase tracking-wider">Delivery</div>
           </div>
         </div>
 
@@ -180,7 +150,7 @@ const ExperiencePage = () => {
             LET'S WORK TOGETHER
           </h2>
           <p className="text-lg text-gray-300 mb-8">
-            Looking for opportunities to build production ML systems
+            Looking for opportunities to build scalable AI systems and production ML pipelines
           </p>
           <a
             href="mailto:somaskandan931@gmail.com"
@@ -189,6 +159,7 @@ const ExperiencePage = () => {
             REACH OUT
           </a>
         </div>
+
       </div>
     </div>
   );

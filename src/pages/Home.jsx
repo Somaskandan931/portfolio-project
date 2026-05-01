@@ -30,12 +30,14 @@ const HomePage = ({ setActiveTab }) => {
     { name: "PostgreSQL", icon: Database, color: "text-amber-400" },
     { name: "SHAP", icon: Brain, color: "text-amber-400" },
     { name: "Transformers", icon: Brain, color: "text-amber-400" },
+    { name: "COLMAP", icon: Code, color: "text-amber-400" },
+    { name: "ChromaDB", icon: Database, color: "text-amber-400" },
   ];
 
   const metrics = [
-    { label: "IEEE PAPER", value: "PUBLISHED", border: "border-amber-400" },
-    { label: "ML PROJECTS", value: "7+", border: "border-white" },
-    { label: "PRODUCTION", value: "READY", border: "border-amber-400" },
+    { label: "IEEE PAPERS", value: "1", border: "border-amber-400" },
+    { label: "ML PROJECTS", value: "8+", border: "border-white" },
+    { label: "HACKATHON", value: "🏆 WON", border: "border-amber-400" },
   ];
 
   return (
@@ -120,7 +122,7 @@ const HomePage = ({ setActiveTab }) => {
               <span className="border-b-4 border-amber-400 pb-2">TECH ARSENAL</span>
             </h2>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
               {techStack.map((tech, idx) => (
                 <div
                   key={idx}
@@ -134,6 +136,22 @@ const HomePage = ({ setActiveTab }) => {
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* Hackathon Win Banner */}
+          <div className="mb-12 border-2 border-white bg-gradient-to-r from-white/5 to-transparent p-8 flex flex-col md:flex-row md:items-center gap-6">
+            <div className="text-5xl">🏆</div>
+            <div className="flex-1">
+              <div className="text-xs font-bold text-amber-400 tracking-widest mb-1">HACKATHON WINNER — INDUSTRY INNOVATION '26</div>
+              <h3 className="text-2xl font-black text-white mb-1">Best Industry Innovation Award</h3>
+              <p className="text-gray-400 text-sm">Defeated 63+ teams from institutions across India with the CareerGenie AI platform. Organized with ATRIBS and Bluewind Innovations at Sathyabama Institute.</p>
+            </div>
+            <button
+              onClick={() => setActiveTab('projects')}
+              className="px-6 py-3 border-2 border-amber-400 text-amber-400 font-bold uppercase tracking-wider text-sm hover:bg-amber-400 hover:text-black transition-all duration-300 whitespace-nowrap flex items-center gap-2"
+            >
+              SEE PROJECT <ArrowRight size={16} />
+            </button>
           </div>
 
           {/* Featured Work Teaser */}
