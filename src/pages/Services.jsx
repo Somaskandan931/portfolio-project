@@ -70,6 +70,7 @@ const ServicesPage = () => {
       tags: ['LaTeX', 'IEEE Format', 'Research', 'Academic Writing'],
       featured: false,
     },
+    {
       id: 'saas-mvp',
       number: '04',
       icon: Zap,
