@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Code, GraduationCap, Briefcase, CheckCircle, Mail, Wrench, Users, Zap, FileText, Trophy, Database } from 'lucide-react';
+import { ArrowRight, Code, GraduationCap, CheckCircle, Mail, Wrench, Users, Zap, FileText, Trophy, Database } from 'lucide-react';
 
 const ServicesPage = () => {
   const [activeService, setActiveService] = useState(null);
