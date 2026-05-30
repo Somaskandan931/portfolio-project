@@ -55,7 +55,7 @@ const ServicesPage = () => {
       title: 'IEEE PAPER ASSISTANCE',
       tagline: 'Research Formatting & Literature Support',
       description:
-        'I am IEEE-published twice. I help you format your research paper correctly, structure your literature review, and prepare for conference submission — without ghostwriting.',
+        'I am IEEE-published. I help you format your research paper correctly, structure your literature review, and prepare for conference submission — without ghostwriting.',
       offerings: [
         'IEEE LaTeX / Word template formatting',
         'Literature review structuring',
@@ -126,7 +126,7 @@ const ServicesPage = () => {
 
   const whyMe = [
     { number: '10+', label: 'PROJECTS SHIPPED' },
-    { number: '2×', label: 'IEEE PUBLISHED' },
+    { number: '1', label: 'IEEE PUBLISHED' },
     { number: '🏆', label: 'NATIONAL WINNER' },
     { number: '∞', label: 'CHAI CONSUMED' },
   ];
