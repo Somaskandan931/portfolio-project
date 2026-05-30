@@ -194,6 +194,14 @@ const InquiryModal = ({ service, onClose }) => {
                 >
                   WhatsApp
                 </a>
+                {' '}or{' '}
+                <a
+                  href="mailto:somaskandan931@gmail.com"
+                  className="inline-flex items-center gap-1 text-amber-400 hover:text-white transition-colors"
+                >
+                  <Mail size={11} />
+                  Email
+                </a>
               </p>
             </>
           )}
