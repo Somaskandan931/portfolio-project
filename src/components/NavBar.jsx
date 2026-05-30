@@ -4,7 +4,7 @@ import { Menu, X, Sparkles } from 'lucide-react';
 const NavBar = ({ activeTab, setActiveTab }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navItems = ['home', 'about', 'projects', 'experience', 'contact'];
+  const navItems = ['home', 'about', 'projects', 'experience', 'services', 'contact'];
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);

@@ -4,6 +4,7 @@ import HomePage from './pages/Home';
 import AboutPage from './pages/About';
 import ProjectsPage from './pages/Projects';
 import ExperiencePage from './pages/Experience';
+import ServicesPage from './pages/Services';
 import ContactPage from './pages/Contact';
 
 const Portfolio = () => {
@@ -11,14 +12,16 @@ const Portfolio = () => {
 
   const renderPage = () => {
     switch (activeTab) {
-      case 'home': 
+      case 'home':
         return <HomePage setActiveTab={setActiveTab} />;
-      case 'about': 
+      case 'about':
         return <AboutPage />;
-      case 'projects': 
+      case 'projects':
         return <ProjectsPage />;
-      case 'experience': 
+      case 'experience':
         return <ExperiencePage />;
+      case 'services':
+        return <ServicesPage />;
       case 'contact': 
         return <ContactPage />;
       default: 
