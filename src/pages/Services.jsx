@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Code, GraduationCap, CheckCircle, Mail, Wrench, Users, Zap, FileText, Trophy, Database } from 'lucide-react';
+import { ArrowRight, Code, GraduationCap, CheckCircle, Mail, Wrench, Users, Zap, FileText, Database } from 'lucide-react';
 
 const ServicesPage = () => {
   const [activeService, setActiveService] = useState(null);
@@ -70,31 +70,8 @@ const ServicesPage = () => {
       tags: ['LaTeX', 'IEEE Format', 'Research', 'Academic Writing'],
       featured: false,
     },
-    {
-      id: 'hackathon',
-      number: '04',
-      icon: Trophy,
-      title: 'HACKATHON COACHING',
-      tagline: 'Strategy, Stack & Submission Support',
-      description:
-        'National hackathon winner here. I coach teams on ideation, tech stack selection, pitch deck design, and live debugging during the event — so you spend less time stuck and more time building.',
-      offerings: [
-        'Problem statement analysis & ideation',
-        'Tech stack recommendation',
-        'Architecture design & planning',
-        'Live debugging support (remote)',
-        'Pitch deck review & feedback',
-        'Demo script preparation',
-      ],
-      pricing: '₹1,000 – ₹3,000',
-      pricingNote: 'Per event / per team',
-      turnaround: 'Pre-event + during event',
-      tags: ['Ideation', 'Pitch Deck', 'Architecture', 'Live Support'],
-      featured: false,
-    },
-    {
       id: 'saas-mvp',
-      number: '05',
+      number: '04',
       icon: Zap,
       title: 'SAAS MVP FOR SMALL BUSINESSES',
       tagline: 'For Shops, Clinics, Tuition Centers & Local Businesses',
@@ -116,7 +93,7 @@ const ServicesPage = () => {
     },
     {
       id: 'ml-consulting',
-      number: '06',
+      number: '05',
       icon: Database,
       title: 'ML / AI CONSULTING & CUSTOM BUILDS',
       tagline: 'For Startups & Small Teams',
