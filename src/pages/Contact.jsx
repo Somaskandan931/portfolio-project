@@ -34,18 +34,18 @@ const ContactPage = () => {
   ];
 
   const interests = [
-    "Machine Learning & AI Development",
-    "Natural Language Processing",
-    "Explainable AI Solutions",
-    "Production ML Systems",
-    "Research Collaborations"
+    "Entry-level AI/ML & Generative AI Engineering",
+    "AI Software Development",
+    "AI Agent Security & Governance",
+    "Computer Vision & Explainable ML",
+    "Research & Collaborative Projects"
   ];
 
   const availability = [
     "Full-time opportunities",
     "Freelance projects",
     "Research collaborations",
-    "Consulting work"
+    "Collaborative engineering projects"
   ];
 
   return (
@@ -60,7 +60,7 @@ const ContactPage = () => {
             <span className="text-amber-400">CONNECT</span>
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl border-l-4 border-amber-400 pl-6">
-            Open to opportunities, collaborations, and discussions about building production ML systems
+            Open to entry-level opportunities, research collaborations, and conversations about building intelligent systems
           </p>
         </div>
 
@@ -153,9 +153,9 @@ const ContactPage = () => {
             <div className="grid md:grid-cols-3 gap-8">
               <div>
                 <div className="text-6xl font-black text-amber-400 mb-3">01</div>
-                <h3 className="text-xl font-bold text-white mb-2">PRODUCTION-READY</h3>
+                <h3 className="text-xl font-bold text-white mb-2">TESTABLE & REPRODUCIBLE</h3>
                 <p className="text-gray-400">
-                  I build ML systems that actually work in production, not just notebooks.
+                  I focus on reliable, testable systems with honest evaluation, not just notebooks.
                 </p>
               </div>
               <div>
@@ -188,7 +188,7 @@ const ContactPage = () => {
               READY TO BUILD<br />SOMETHING AMAZING?
             </h2>
             <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-              Let's create ML systems that make a real impact. Drop me a message and let's discuss your project.
+              Let's build intelligent systems that make a real impact. Drop me a message and let's discuss your project.
             </p>
             <a
               href="mailto:somaskandan931@gmail.com"

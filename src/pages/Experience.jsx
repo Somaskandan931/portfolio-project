@@ -4,17 +4,40 @@ import { Briefcase, MapPin, Calendar, ArrowRight } from 'lucide-react';
 const ExperiencePage = () => {
   const experience = [
     {
-      role: "Production AI Developer (Intern)",
+      role: "AI/ML Engineer Intern",
+      company: "Allora Tech",
+      location: "Tamil Nadu, India",
+      period: "JUN 2026 - PRESENT",
+      type: "INTERNSHIP · CURRENT",
+      achievements: [
+        "Develop conversational AI applications using Python, FastAPI, LangChain, and LangGraph.",
+        "Build RAG pipelines with retrieval, conversational memory, and workflow orchestration backed by PostgreSQL/pgvector."
+      ],
+      skills: ["Python", "FastAPI", "LangChain", "LangGraph", "RAG", "PostgreSQL", "pgvector"]
+    },
+    {
+      role: "Software Engineer Intern",
+      company: "NxtHive",
+      location: "Tamil Nadu, India",
+      period: "JUL 2026 - OCT 2026",
+      type: "INTERNSHIP",
+      achievements: [
+        "Developed backend features for recruitment-management applications using TypeScript, Fastify, Prisma, and PostgreSQL.",
+        "Worked on REST APIs, database operations, and application workflows."
+      ],
+      skills: ["TypeScript", "Fastify", "Prisma", "PostgreSQL", "REST APIs"]
+    },
+    {
+      role: "Artificial Intelligence Engineer Intern",
       company: "InnoXR Labs Pvt. Ltd.",
       location: "Chennai, India",
       period: "MAR 2026 - JUN 2026",
       type: "INTERNSHIP",
       achievements: [
-        "Built and deployed ML-powered FastAPI microservices for real-time inference in AR/immersive applications.",
-        "Designed API-first ML systems integrating model inference with scalable backend endpoints.",
-        "Delivered end-to-end features from model development to deployment in a fast-paced startup environment."
+        "Built a 3D reconstruction pipeline integrating frame extraction, COLMAP, Gaussian Splatting, and GPU-based training with PyTorch and computer-vision workflows.",
+        "Delivered the pipeline end to end in a fast-paced startup environment, from raw video input to interactive scenes."
       ],
-      skills: ["FastAPI", "Python", "REST APIs", "Model Deployment", "Microservices", "AR/XR"]
+      skills: ["PyTorch", "COLMAP", "3D Gaussian Splatting", "Computer Vision", "FastAPI", "GPU Training"]
     },
     {
       role: "Data Analyst Intern",
@@ -66,7 +89,7 @@ const ExperiencePage = () => {
             <span className="text-amber-400">EXPERIENCE</span>
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl border-l-4 border-amber-400 pl-6">
-            Experience building production-grade AI systems and working across data, operations, and real-world environments
+            Experience building AI systems and working across data, operations, and real-world environments
           </p>
         </div>
 
@@ -150,7 +173,7 @@ const ExperiencePage = () => {
             LET'S WORK TOGETHER
           </h2>
           <p className="text-lg text-gray-300 mb-8">
-            Looking for opportunities to build scalable AI systems and production ML pipelines
+            Looking for entry-level AI/ML, Generative AI, and AI software engineering opportunities
           </p>
           <a
             href="mailto:somaskandan931@gmail.com"

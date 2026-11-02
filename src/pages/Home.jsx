@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Code, Mail, Download, ArrowRight, Zap, Terminal, Database, Brain } from 'lucide-react';
+import { Code, Mail, Download, ArrowRight, Zap, Terminal, Database, Brain, Github } from 'lucide-react';
 
 const HomePage = ({ setActiveTab }) => {
   const [typedText, setTypedText] = useState('');
-  const roles = useMemo(() => ['Machine Learning Engineer'], []);
+  const roles = useMemo(() => ['AI / ML Engineer', 'Generative AI', 'Researcher'], []);
   const [roleIndex, setRoleIndex] = useState(0);
 
   useEffect(() => {
@@ -25,19 +25,20 @@ const HomePage = ({ setActiveTab }) => {
 
   const techStack = [
     { name: "Python", icon: Terminal, color: "text-amber-400" },
-    { name: "XGBoost", icon: Brain, color: "text-amber-400" },
     { name: "FastAPI", icon: Zap, color: "text-amber-400" },
+    { name: "RAG", icon: Brain, color: "text-amber-400" },
+    { name: "LangGraph", icon: Brain, color: "text-amber-400" },
     { name: "PostgreSQL", icon: Database, color: "text-amber-400" },
+    { name: "pgvector", icon: Database, color: "text-amber-400" },
+    { name: "FAISS", icon: Database, color: "text-amber-400" },
+    { name: "LightGBM", icon: Brain, color: "text-amber-400" },
     { name: "SHAP", icon: Brain, color: "text-amber-400" },
-    { name: "Transformers", icon: Brain, color: "text-amber-400" },
-    { name: "COLMAP", icon: Code, color: "text-amber-400" },
-    { name: "ChromaDB", icon: Database, color: "text-amber-400" },
   ];
 
   const metrics = [
-    { label: "IEEE PAPERS", value: "1", border: "border-amber-400" },
-    { label: "ML PROJECTS", value: "8+", border: "border-white" },
-    { label: "HACKATHON", value: "🏆 WON", border: "border-amber-400" },
+    { label: "RESEARCH PAPERS", value: "3", border: "border-amber-400" },
+    { label: "INTERNSHIPS", value: "4", border: "border-white" },
+    { label: "HACKATHONS", value: "🏆 5", border: "border-amber-400" },
   ];
 
   return (
@@ -65,9 +66,16 @@ const HomePage = ({ setActiveTab }) => {
 
             <div className="max-w-3xl mb-12">
               <p className="text-xl md:text-2xl text-gray-300 leading-relaxed border-l-4 border-amber-400 pl-6">
-                Building <span className="text-amber-400 font-bold">production-grade ML systems</span> that solve real problems.
-                Specializing in fraud detection, NLP, and explainable AI with <span className="text-white font-bold">XGBoost, SHAP</span>, and modern transformer architectures.
+                <span className="text-amber-400 font-bold">Building Intelligent Systems. Researching What Comes Next.</span>
               </p>
+              <p className="text-lg md:text-xl text-gray-400 leading-relaxed pl-6 mt-4">
+                Computer Science postgraduate focused on AI/ML, Generative AI, computer vision, and software engineering — building and researching intelligent systems with an emphasis on practical applications, <span className="text-white font-bold">security, and responsible AI</span>. IEEE-published researcher.
+              </p>
+              <div className="flex flex-wrap gap-3 pl-6 mt-6">
+                {['AI & Machine Learning', 'Generative AI', 'Computer Vision', 'AI Agent Security'].map((tag) => (
+                  <span key={tag} className="px-4 py-2 border border-amber-400 text-amber-400 text-xs font-bold uppercase tracking-wider">{tag}</span>
+                ))}
+              </div>
             </div>
 
             {/* CTA Buttons */}
@@ -82,6 +90,16 @@ const HomePage = ({ setActiveTab }) => {
                   <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
                 </span>
               </button>
+
+              <a
+                href="https://github.com/Somaskandan931"
+                target="_blank"
+                rel="noreferrer"
+                className="px-8 py-4 border-2 border-white text-white font-bold uppercase tracking-wider text-sm hover:bg-white hover:text-black transition-all duration-300 flex items-center gap-3"
+              >
+                <Github size={20} />
+                GITHUB
+              </a>
 
               <a
                 href="/Rajagopal_Somaskandan_Resume.pdf"
@@ -158,16 +176,17 @@ const HomePage = ({ setActiveTab }) => {
           <div className="border-2 border-amber-400 p-12 transform hover:scale-105 transition-all duration-500 bg-gradient-to-br from-amber-400/5 to-transparent">
             <div className="flex items-start justify-between gap-8 flex-col md:flex-row">
               <div className="flex-1">
-                <div className="text-sm font-bold text-amber-400 tracking-widest mb-4">FEATURED PROJECT</div>
-                <h3 className="text-3xl md:text-4xl font-black mb-4 text-white">FinGuard Pro</h3>
+                <div className="text-sm font-bold text-amber-400 tracking-widest mb-4">FEATURED RESEARCH · PAPER IN PROGRESS</div>
+                <h3 className="text-3xl md:text-4xl font-black mb-4 text-white">Prompt Aegis</h3>
                 <p className="text-lg text-gray-300 mb-6">
-                  End-to-end fraud detection pipeline with <span className="text-amber-400">94% recall</span> and
-                  <span className="text-amber-400"> ROC-AUC 0.995</span>. Published in IEEE ICAAIC 2025.
+                  A governance gateway between AI agents and their tools: <span className="text-amber-400">policy enforcement</span>,
+                  <span className="text-amber-400"> risk scoring</span>, prompt-injection evaluation, and
+                  <span className="text-amber-400"> audit logging</span>.
                 </p>
                 <div className="flex flex-wrap gap-3">
-                  <span className="px-4 py-2 bg-amber-400/20 border border-amber-400 text-amber-400 text-xs font-bold">XGBOOST</span>
-                  <span className="px-4 py-2 bg-amber-400/20 border border-amber-400 text-amber-400 text-xs font-bold">SHAP</span>
                   <span className="px-4 py-2 bg-amber-400/20 border border-amber-400 text-amber-400 text-xs font-bold">FASTAPI</span>
+                  <span className="px-4 py-2 bg-amber-400/20 border border-amber-400 text-amber-400 text-xs font-bold">LANGGRAPH</span>
+                  <span className="px-4 py-2 bg-amber-400/20 border border-amber-400 text-amber-400 text-xs font-bold">AI AGENT SECURITY</span>
                 </div>
               </div>
               <button

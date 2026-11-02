@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {
   ArrowRight, Code, GraduationCap, CheckCircle, Mail,
   Wrench, Users, Zap, FileText, Database, Bot, MessageSquare,
-  Clock, IndianRupee, Star, X, Send, Loader
+  Clock, IndianRupee, Star, X, Send
 } from 'lucide-react';
 
 // ─── Inquiry Modal ────────────────────────────────────────────────────────────
@@ -13,43 +13,50 @@ const InquiryModal = ({ service, onClose }) => {
     budget: '',
     message: '',
   });
-  const [status, setStatus] = useState('idle'); // idle | sending | success | error
+  const [status, setStatus] = useState('idle'); // idle | success | error
   const [errorMsg, setErrorMsg] = useState('');
 
   const handleChange = (e) => {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = async (e) => {
+  const buildText = () =>
+    [
+      `Hi Somaskandan, I'm interested in: ${service.title}`,
+      '',
+      `Name: ${form.name}`,
+      `Email: ${form.email}`,
+      form.budget ? `Budget: ${form.budget}` : null,
+      '',
+      form.message,
+    ]
+      .filter((line) => line !== null)
+      .join('\n');
+
+  const formComplete = () => form.name && form.email && form.message;
+
+  const sendWhatsApp = (e) => {
     e.preventDefault();
-    if (!form.name || !form.email || !form.message) return;
+    if (!formComplete()) return;
+    window.open(
+      `https://wa.me/917200288242?text=${encodeURIComponent(buildText())}`,
+      '_blank',
+      'noopener,noreferrer'
+    );
+    setStatus('success');
+  };
 
-    setStatus('sending');
-    setErrorMsg('');
-
-    try {
-      const res = await fetch('/.netlify/functions/notify', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          service: service.title,
-          budget: form.budget || null,
-          message: form.message,
-        }),
-      });
-
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data.error || 'Something went wrong');
-      }
-
-      setStatus('success');
-    } catch (err) {
+  const sendEmail = () => {
+    if (!formComplete()) {
       setStatus('error');
-      setErrorMsg(err.message || 'Failed to send. Please try WhatsApp or email directly.');
+      setErrorMsg('Please fill in your name, email and message first.');
+      return;
     }
+    const subject = `Inquiry: ${service.title}`;
+    window.location.href = `mailto:somaskandan931@gmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(buildText())}`;
+    setStatus('success');
   };
 
   return (
@@ -70,9 +77,9 @@ const InquiryModal = ({ service, onClose }) => {
               <div className="w-16 h-16 border-2 border-amber-400 flex items-center justify-center mx-auto mb-6">
                 <CheckCircle className="text-amber-400" size={32} />
               </div>
-              <h3 className="text-2xl font-black text-white mb-3">Message Sent!</h3>
+              <h3 className="text-2xl font-black text-white mb-3">Almost there!</h3>
               <p className="text-gray-400 text-sm mb-8">
-                I'll reply within 24 hours. You'll hear from me at <span className="text-amber-400">{form.email}</span>.
+                Your message is ready in WhatsApp or your email app. Press send there and I'll reply at <span className="text-amber-400">{form.email}</span>.
               </p>
               <button
                 onClick={onClose}
@@ -95,7 +102,7 @@ const InquiryModal = ({ service, onClose }) => {
                 </div>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={sendWhatsApp} className="space-y-4">
                 {/* Name */}
                 <div>
                   <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">
@@ -165,23 +172,23 @@ const InquiryModal = ({ service, onClose }) => {
                 )}
 
                 {/* Submit */}
-                <button
-                  type="submit"
-                  disabled={status === 'sending'}
-                  className="w-full flex items-center justify-center gap-3 px-6 py-4 bg-amber-400 text-black font-bold uppercase tracking-wider hover:bg-white transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
-                >
-                  {status === 'sending' ? (
-                    <>
-                      <Loader size={18} className="animate-spin" />
-                      SENDING...
-                    </>
-                  ) : (
-                    <>
-                      <Send size={18} />
-                      SEND INQUIRY
-                    </>
-                  )}
-                </button>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  <button
+                    type="submit"
+                    className="flex items-center justify-center gap-3 px-6 py-4 bg-amber-400 text-black font-bold uppercase tracking-wider hover:bg-white transition-all duration-300"
+                  >
+                    <Send size={18} />
+                    SEND VIA WHATSAPP
+                  </button>
+                  <button
+                    type="button"
+                    onClick={sendEmail}
+                    className="flex items-center justify-center gap-3 px-6 py-4 border-2 border-amber-400 text-amber-400 font-bold uppercase tracking-wider hover:bg-amber-400 hover:text-black transition-all duration-300"
+                  >
+                    <Mail size={18} />
+                    SEND VIA EMAIL
+                  </button>
+                </div>
               </form>
 
               <p className="mt-4 text-center text-xs text-gray-600">
@@ -346,7 +353,7 @@ const ServicesPage = () => {
       category: 'For Businesses',
       title: 'Custom ML / AI Builds',
       tagline: 'For startups & small product teams',
-      description: 'Fraud detection models, semantic search systems, RAG pipelines, or custom ML features for your product. I scope, build, and deliver production-ready solutions with full documentation.',
+      description: 'Fraud detection models, semantic search systems, RAG pipelines, or custom ML features for your product. I scope, build, and deliver working prototypes and solutions with full documentation.',
       offerings: [
         'Problem scoping & feasibility analysis',
         'Data pipeline design & cleaning',
@@ -387,7 +394,7 @@ const ServicesPage = () => {
           <div className="max-w-2xl border-l-4 border-amber-400 pl-6">
             <p className="text-lg text-gray-300 leading-relaxed">
               Student projects, IEEE papers, AI automation, and custom ML builds —
-              <span className="text-amber-400 font-bold"> production-grade delivery, honest pricing.</span>
+              <span className="text-amber-400 font-bold"> clear scoping, documented delivery, honest pricing.</span>
             </p>
           </div>
         </div>
